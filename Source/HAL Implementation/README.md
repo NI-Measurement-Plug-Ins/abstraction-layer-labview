@@ -1,13 +1,14 @@
 # Dmm Measurement using LabVIEW HAL
 
-- [Dmm Measurement](#dmm-measurement)
-- [Features](#features)
-- [Required Software and Drivers](#required-software-and-drivers)
-- [Required Hardware](#required-hardware)
-- [HAL Class Hierarchy](#hal-class-hierarchy)
-- [How to simulate NI-DMM and Keysight DMM?](#how-to-simulate-ni-dmm-and-keysight-dmm)
-  - [To simulate NI-DMM](#to-simulate-ni-dmm)
-  - [To simulate Keysight 34001A via VISA-TCP\IP simulation](#to-simulate-keysight-34001a-via-visa-tcpip-simulation)
+- [Dmm Measurement using LabVIEW HAL](#dmm-measurement-using-labview-hal)
+  - [Dmm Measurement](#dmm-measurement)
+  - [Features](#features)
+  - [Required Software and Drivers](#required-software-and-drivers)
+  - [Required Hardware](#required-hardware)
+  - [HAL Class Hierarchy](#hal-class-hierarchy)
+  - [How to simulate NI-DMM and Keysight DMM?](#how-to-simulate-ni-dmm-and-keysight-dmm)
+    - [To simulate NI-DMM](#to-simulate-ni-dmm)
+    - [To simulate Keysight 34001A via VISA-TCP\\IP simulation](#to-simulate-keysight-34001a-via-visa-tcpip-simulation)
   - [Note](#note)
 
 ## Dmm Measurement
@@ -63,19 +64,19 @@ This example requires :
 ### To simulate Keysight 34001A via VISA-TCP\IP simulation
 
 - Run the `<abstraction-layer repo>labview_hal\HAL\Instruments\KeysightDmm\SubVI\Simulate_Keysight_34401a_TCP.vi` with port `50000` and desired timeout in ms.
-- Open `NI-Max` application.
-- Create a new `VISA TCP/IP Resource` under `Devices and Interfaces -> NetworkDevices`.
-- Select `manual entry of raw socket` and click next
-- Now enter the host address as `localhost` and port `50000`.
-- Verify `Validate` opens the port.
-- Enter the alias name as `VISA-DMM`
-- In pin map verify if the custom instrument is named as `VISA-DMM`
+- Open NI-Max application.
+- Create a new VISA TCP/IP Resource under Devices and Interfaces -> NetworkDevices.
+- Select manual entry of raw socket and click next
+- Now enter the host address as localhost and port 50000.
+- Verify Validate opens the port.
+- Enter the alias name as VISA-DMM
+- In pin map verify if the custom instrument is named as VISA-DMM
 
 ## Note
 
-- This measurement uses the `DmmMeasurementHAL.pinmap` file, which includes two custom DMM instruments:
-  `GPIB0::3::INSTR (simulated)` and `VISA-DMM (physical)`, both identified with the instrument
-  type ID `KeysightDmm`. Currently, the `Initialize and Register Sessions.vi` and `Unregister and Close Sessions`
+- This measurement uses the DmmMeasurementHAL.pinmap file, which includes two custom DMM instruments:
+  GPIB0::3::INSTR (simulated) and VISA-DMM (physical), both identified with the instrument
+  type ID KeysightDmm. Currently, the Initialize and Register Sessions.vi and Unregister and Close Sessions
   only support initializing a single session of a specific instrument type ID. Therefore, before
   executing the TestStand sequence, ensure to remove the simulated instrument (GPIB0::3::INSTR) if
   you have a physical instrument (VISA-DMM) connected, or vice versa.

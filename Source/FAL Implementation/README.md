@@ -1,14 +1,15 @@
 # Source Measure DC Voltage using LabVIEW FAL
 
-- [Source Measure DC Voltage Measurement](#source-measure-dc-voltage-measurement)
-- [Features](#features)
-- [Required Software and Drivers](#required-software-and-drivers)
-- [Required Hardware](#required-hardware)
-- [FAL Class Hierarchy](#fal-class-hierarchy)
-- [How to simulate NI-DMM, NI-DCPower and Keysight DMM?](#how-to-simulate-ni-dmm-ni-dcpower-and-keysight-dmm)
-  - [To simulate NI instruments](#to-simulate-ni-instruments)
-  - [To simulate Keysight DMM via VISA-TCP\IP simulation](#to-simulate-keysight-dmm-via-visa-tcpip-simulation)
-- [Note](#note)
+- [Source Measure DC Voltage using LabVIEW FAL](#source-measure-dc-voltage-using-labview-fal)
+  - [Source Measure DC Voltage Measurement](#source-measure-dc-voltage-measurement)
+  - [Features](#features)
+  - [Required Software and Drivers](#required-software-and-drivers)
+  - [Required Hardware](#required-hardware)
+  - [FAL Class Hierarchy](#fal-class-hierarchy)
+  - [How to simulate NI-DMM, NI-DCPower and Keysight DMM?](#how-to-simulate-ni-dmm-ni-dcpower-and-keysight-dmm)
+    - [To simulate NI instruments](#to-simulate-ni-instruments)
+    - [To simulate Keysight DMM via VISA-TCP\\IP simulation](#to-simulate-keysight-dmm-via-visa-tcpip-simulation)
+  - [Note](#note)
 
 ## Source Measure DC Voltage Measurement
 
@@ -57,28 +58,28 @@ The FAL library implementation involves the following modules or classes:
 
 ### To simulate NI instruments
 
-- Launch `NI MAX`.
-- Right-click on `Devices and Interfaces` in the MAX configuration tree and select `Create New.`
-- In the `Create New` dialog, choose `NI-DAQmx Simulated Device` and click `Finish.`
-- The `Choose Device` dialog will open. Search for `PXIe-4141(NI-DCPower)/PXIe-4081(NI-DMM)` device model or navigate the list to find the device.
-- Select the device model `PXIe-4141/4081` and click “OK.”
-- The simulated device will now appear in NI MAX under `My System` > `Devices and Interfaces.`
+- Launch NI MAX.
+- Right-click on Devices and Interfaces in the MAX configuration tree and select Create New.
+- In the Create New dialog, choose NI-DAQmx Simulated Device and click Finish.
+- The Choose Device dialog will open. Search for PXIe-4141(NI-DCPower)/PXIe-4081(NI-DMM) device model or navigate the list to find the device.
+- Select the device model PXIe-4141/4081 and click “OK.”
+- The simulated device will now appear in NI MAX under My System > Devices and Interfaces.
 
 ### To simulate Keysight DMM via VISA-TCP\IP simulation
 
-- Run the `labview_hal\HAL\Instruments\KeysightDmm\SubVI\Simulate_Keysight_34401a_TCP.vi` with port `50000` and desired timeout in ms.
-- Open `NI-Max` application.
-- Create a new `VISA TCP/IP Resource` under `Devices and Interfaces -> NetworkDevices`.
-- Select `manual entry of raw socket` and click next.
-- Now enter the host address as `localhost` and port `50000`.
-- Verify `Validate` opens the port.
-- Enter the alias name as `VISA-DMM`
-- In pin map verify if the custom instrument is named as `VISA-DMM`
+- Run the labview_hal\HAL\Instruments\KeysightDmm\SubVI\Simulate_Keysight_34401a_TCP.vi with port 50000 and desired timeout in ms.
+- Open NI-Max application.
+- Create a new VISA TCP/IP Resource under Devices and Interfaces -> NetworkDevices.
+- Select manual entry of raw socket and click next.
+- Now enter the host address as localhost and port 50000.
+- Verify Validate opens the port.
+- Enter the alias name as VISA-DMM
+- In pin map verify if the custom instrument is named as VISA-DMM
 
 ## Note
 
 - This measurement uses the `SourceMeasureDCVoltageFAL.pinmap` file, which includes one DC-Power
   instrument and two custom DMM instruments: `GPIB0::3::INSTR (simulated)` and `VISA-DMM(physical)`,
-  both identified with the instrument type ID `KeysightDmm`. Currently, the `Initialize and Register Sessions.vi` and `Unregister and Close Sessions`
+  both identified with the instrument type ID `KeysightDmm`. Currently, the Initialize and Register Sessions.vi and Unregister and Close Sessions
   only support initializing a single session of a specific instrument type ID,  ensure to remove the simulated instrument (GPIB0::3::INSTR) if you have a
   physical instrument (VISA-DMM) connected, or vice versa.
