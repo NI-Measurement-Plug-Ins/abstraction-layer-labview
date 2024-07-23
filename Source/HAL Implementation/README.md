@@ -67,7 +67,7 @@ This example requires :
 - Open NI Max application.
 - Create a new VISA TCP/IP Resource under Devices and Interfaces -> NetworkDevices.
 - Select manual entry of raw socket and click next
-- Now enter the host address as localhost and port 50000.
+- Now enter the host address as localhost and port 50000 (consistent with port number in simulation vi).
 - Verify Validate opens the port.
 - Enter the alias name as VISA-DMM
 - In pin map verify if the custom instrument is named as VISA-DMM
