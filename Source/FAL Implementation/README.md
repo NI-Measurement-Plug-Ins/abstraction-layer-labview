@@ -1,14 +1,15 @@
 # Source Measure DC Voltage using LabVIEW FAL
 
-- [Source Measure DC Voltage Measurement](#source-measure-dc-voltage-measurement)
-- [Features](#features)
-- [Required Software and Drivers](#required-software-and-drivers)
-- [Required Hardware](#required-hardware)
-- [FAL Class Hierarchy](#fal-class-hierarchy)
-- [How to simulate NI-DMM, NI-DCPower and Keysight DMM?](#how-to-simulate-ni-dmm-ni-dcpower-and-keysight-dmm)
-  - [To simulate NI instruments](#to-simulate-ni-instruments)
-  - [To simulate Keysight DMM via VISA-TCP\IP simulation](#to-simulate-keysight-dmm-via-visa-tcpip-simulation)
-- [Note](#note)
+- [Source Measure DC Voltage using LabVIEW FAL](#source-measure-dc-voltage-using-labview-fal)
+  - [Source Measure DC Voltage Measurement](#source-measure-dc-voltage-measurement)
+  - [Features](#features)
+  - [Required Software and Drivers](#required-software-and-drivers)
+  - [Required Hardware](#required-hardware)
+  - [FAL Class Hierarchy](#fal-class-hierarchy)
+  - [How to simulate NI-DMM, NI-DCPower and Keysight DMM?](#how-to-simulate-ni-dmm-ni-dcpower-and-keysight-dmm)
+    - [To simulate NI instruments](#to-simulate-ni-instruments)
+    - [To simulate Keysight DMM via VISA-TCP\IP simulation](#to-simulate-keysight-dmm-via-visa-tcpip-simulation)
+  - [Note](#note)
 
 ## Source Measure DC Voltage Measurement
 
@@ -80,6 +81,6 @@ The FAL library implementation involves the following modules or classes:
 
 - This measurement uses the `SourceMeasureDCVoltageFAL.pinmap` file, which includes one DC-Power
   instrument and two custom DMM instruments: `GPIB0::3::INSTR (simulated)` and `VISA-DMM(physical)`,
-  both identified with the instrument type ID `KeysightDmm`. Currently, the `Initialize and Register Sessions.vi` and `Unregister and Close Sessions.vi`
+  both identified with the instrument type ID `KeysightDmm`. Currently, the Initialize and Register Sessions.vi and Unregister and Close Sessions.vi
   only support initializing a single session of a specific instrument type ID,  ensure to remove the simulated instrument (GPIB0::3::INSTR) if you have a
   physical instrument (VISA-DMM) connected, or vice versa.

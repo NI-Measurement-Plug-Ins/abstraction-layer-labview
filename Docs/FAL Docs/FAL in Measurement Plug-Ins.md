@@ -1,9 +1,10 @@
 # FAL in Measurement Plug-In
 
-- [What is FAL?](#what-is-fal)
-- [Pre-requisites](#pre-requisites)
-- [Steps to create new FAL based measurement](#steps-to-create-new-fal-based-measurement)
-- [Steps to migrate FAL implementations from other frameworks](#steps-to-migrate-fal-implementations-from-other-frameworks)
+- [FAL in Measurement Plug-In](#fal-in-measurement-plug-in)
+  - [What is FAL?](#what-is-fal)
+  - [Pre-requisites](#pre-requisites)
+  - [Steps to create new FAL based measurement](#steps-to-create-new-fal-based-measurement)
+  - [Steps to migrate FAL implementations from other frameworks](#steps-to-migrate-fal-implementations-from-other-frameworks)
 
 ## What is FAL?
 

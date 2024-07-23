@@ -1,9 +1,10 @@
 # HAL in Measurement Plug-In
 
-- [What is HAL?](#what-is-hal)
-- [Pre-requisites](#pre-requisites)
-- [Steps to create new HAL based measurement](#steps-to-create-new-hal-based-measurement)
-- [Migrate the existing instrument class to Measurement Plug-In](#migrate-the-existing-instrument-class-to-measurement-plug-in)
+- [HAL in Measurement Plug-In](#hal-in-measurement-plug-in)
+  - [What is HAL?](#what-is-hal)
+  - [Pre-requisites](#pre-requisites)
+  - [Steps to create new HAL based measurement](#steps-to-create-new-hal-based-measurement)
+  - [Migrate the existing instrument class to Measurement Plug-In](#migrate-the-existing-instrument-class-to-measurement-plug-in)
 
 ## What is HAL?
 
