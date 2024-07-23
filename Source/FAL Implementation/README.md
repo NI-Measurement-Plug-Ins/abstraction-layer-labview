@@ -26,6 +26,7 @@ Select the **Source Pin** name as `VDD_NI_DCPower` to source the NI-DCPower inst
 
 ## Required Software and Drivers
 
+- LabVIEW 2021 SP1 64-bit or later
 - InstrumentStudio 2024 Q3 or later
 - TestStand 2021 SP1 or later
 - NI-DMM 2023 Q1 or later
@@ -57,28 +58,28 @@ The FAL library implementation involves the following modules or classes:
 
 ### To simulate NI instruments
 
-- Launch `NI MAX`.
-- Right-click on `Devices and Interfaces` in the MAX configuration tree and select `Create New.`
-- In the `Create New` dialog, choose `NI-DAQmx Simulated Device` and click `Finish.`
-- The `Choose Device` dialog will open. Search for `PXIe-4141(NI-DCPower)/PXIe-4081(NI-DMM)` device model or navigate the list to find the device.
-- Select the device model `PXIe-4141/4081` and click “OK.”
-- The simulated device will now appear in NI MAX under `My System` > `Devices and Interfaces.`
+- Launch NI MAX.
+- Right-click on Devices and Interfaces in the MAX configuration tree and select Create New.
+- In the Create New dialog, choose NI-DAQmx Simulated Device and click Finish.
+- The Choose Device dialog will open. Search for `PXIe-4141(NI-DCPower)/PXIe-4081(NI-DMM)` device model or navigate the list to find the device.
+- Select the device model `PXIe-4141/4081` and click OK.
+- The simulated device will now appear in NI MAX under My System > Devices and Interfaces.
 
 ### To simulate Keysight DMM via VISA-TCP\IP simulation
 
-- Run the `labview_hal\HAL\Instruments\KeysightDmm\SubVI\Simulate_Keysight_34401a_TCP.vi` with port `50000` and desired timeout in ms.
-- Open `NI-Max` application.
-- Create a new `VISA TCP/IP Resource` under `Devices and Interfaces -> NetworkDevices`.
-- Select `manual entry of raw socket` and click next.
-- Now enter the host address as `localhost` and port `50000`.
-- Verify `Validate` opens the port.
-- Enter the alias name as `VISA-DMM`
-- In pin map verify if the custom instrument is named as `VISA-DMM`
+- Run the `<repo> labview_fal\Utilities\KeysightDmm Simulation\Simulate_Keysight_34401a_TCP.vi` with port 50000 and desired timeout in ms.
+- Open NI Max application.
+- Create a new VISA TCP/IP Resource under Devices and Interfaces -> NetworkDevices.
+- Select manual entry of raw socket and click next.
+- Now enter the host address as localhos` and port 50000.
+- Verify Validate opens the port.
+- Enter the alias name as VISA-DMM
+- In pin map verify if the custom instrument is named as VISA-DMM
 
 ## Note
 
 - This measurement uses the `SourceMeasureDCVoltageFAL.pinmap` file, which includes one DC-Power
   instrument and two custom DMM instruments: `GPIB0::3::INSTR (simulated)` and `VISA-DMM(physical)`,
-  both identified with the instrument type ID `KeysightDmm`. Currently, the `Initialize and Register Sessions.vi` and `Unregister and Close Sessions`
+  both identified with the instrument type ID `KeysightDmm`. Currently, the `Initialize and Register Sessions.vi` and `Unregister and Close Sessions.vi`
   only support initializing a single session of a specific instrument type ID,  ensure to remove the simulated instrument (GPIB0::3::INSTR) if you have a
   physical instrument (VISA-DMM) connected, or vice versa.
