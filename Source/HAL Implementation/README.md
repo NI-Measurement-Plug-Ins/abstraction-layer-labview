@@ -64,9 +64,10 @@ This example requires :
 
 ### To simulate Keysight 34001A via VISA-TCP\IP simulation
 
-- Run the `<repo> labview_fal\Utilities\KeysightDmm Simulation\Simulate_Keysight_34401a_TCP.vi` with port 50000 and desired timeout in ms.
+- Run the `<repo>\Source\Shared\KeysightDmm Simulation\Simulate Keysight 34401a TCP.vi` with port 50000 and desired timeout in ms.
 - Open NI MAX application.
-- Create a new VISA TCP/IP Resource under Devices and Interfaces -> NetworkDevices.
+- Expand Devices and Interfaces and Network Devices will be displayed.
+- Right click Network Devices and click create a new VISA TCP/IP Resource.
 - Select manual entry of raw socket and click next
 - Now enter the host address as localhost and port 50000 (consistent with port number in simulation vi).
 - Verify Validate opens the port.
