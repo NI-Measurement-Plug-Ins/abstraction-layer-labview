@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<SourceFile Checksum="A46FEC0661DF03A036B7513B56C5026FDC09853B6938814AEC90B1FD053E676702F70F0F6127A88DFAFFCF780802465BEBDDE5F061AC3B8AA41FFD0D7A7BC6F8" Timestamp="1DADD96ABF593AF" xmlns="http://www.ni.com/PlatformFramework">
+<SourceFile Checksum="5E7F225EE07F20A98801C78B7EB7D029B54A3B083C7BE3431AB290B14EAF2615A8DE4D05DD8DF945C8FC54C75F85FD341501981BAC18C62A89E79905253FFBA3" Timestamp="1DADDC7AA852EBD" xmlns="http://www.ni.com/PlatformFramework">
 	<SourceModelFeatureSet>
 		<ParsableNamespace AssemblyFileVersion="9.13.0.2690" FeatureSetName="Configuration Based Software Core" Name="http://www.ni.com/ConfigurationBasedSoftware.Core" OldestCompatibleVersion="6.3.0.49152" Version="9.8.1.49152" />
 		<ParsableNamespace AssemblyFileVersion="24.5.0.2690" FeatureSetName="UnifiedTask" Name="http://www.ni.com/InstrumentFramework/Document/SourceModel/UnifiedSoftFrontPanel" Version="1.0.0.0" />
@@ -12,7 +12,7 @@
 		<EnvoyManagerRootEnvoy Id="fc6eedf171bf409abe5028c66ee53056" ModelDefinitionType="EnvoyManagerRootEnvoy" Name="RootEnvoy" />
 		<NameScopingEnvoy AutomaticallyResolveUp="True" Id="751d5d7a7ac2447dbb3e11769e0c2c46" Name="SourceMeasureDCVoltageFAL.sfp" NameTracksFileName="True" />
 		<EmbeddedDefinitionReference Id="993acfc73ff94325b33ee5514061d25c" ModelDefinitionType="{http://www.ni.com/InstrumentFramework/ScreenDocument}Screen" Name="{http\://www.ni.com/InstrumentFramework/ScreenDocument}Screen.task">
-			<Screen ClientId="{9f66efa1-7378-434a-8df4-1bcffc425c08}" ConfigurationParameters="{&quot;@type&quot;:&quot;type.googleapis.com/ConfigurationParameter&quot;,&quot;sourcePin&quot;:&quot;NI_DCPower_Pin&quot;,&quot;voltage level&quot;:2.0,&quot;voltage level range&quot;:6.0,&quot;current limit&quot;:0.01,&quot;current limit range&quot;:0.01,&quot;source delay (sec)&quot;:0.001,&quot;measurePin&quot;:&quot;Keysight_DMM_Pin&quot;,&quot;resolution in digits&quot;:2}" DisplayName="SourceMeasureDCVoltage" Id="67325697237442808d3a2f890e505cf1" PanelPresentation="ConfigurationWithVisualization" ServiceClass="SourceMeasureDCVoltage_LabVIEW" xmlns="http://www.ni.com/InstrumentFramework/ScreenDocument">
+			<Screen ClientId="{47d21e91-a690-4c69-856e-947016f92a53}" ConfigurationParameters="{&quot;@type&quot;:&quot;type.googleapis.com/ConfigurationParameter&quot;,&quot;sourcePin&quot;:&quot;NI_DCPower_Pin&quot;,&quot;voltage level&quot;:2.0,&quot;voltage level range&quot;:6.0,&quot;current limit&quot;:0.01,&quot;current limit range&quot;:0.01,&quot;source delay (sec)&quot;:0.001,&quot;measurePin&quot;:&quot;NI_DMM_Pin&quot;,&quot;resolution in digits&quot;:2}" DisplayName="SourceMeasureDCVoltage" Id="67325697237442808d3a2f890e505cf1" PanelPresentation="ConfigurationWithVisualization" ServiceClass="SourceMeasureDCVoltage_LabVIEW" xmlns="http://www.ni.com/InstrumentFramework/ScreenDocument">
 				<ScreenSurface BackgroundColor="[SMSolidColorBrush]#ffffffff" Height="[float]400" Id="b4e74b56c64f478786fafc2255ecdc94" Left="[float]0" PanelSizeMode="Fixed" Top="[float]0" Width="[float]800" xmlns="http://www.ni.com/ConfigurationBasedSoftware.Core" />
 			</Screen>
 		</EmbeddedDefinitionReference>

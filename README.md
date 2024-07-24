@@ -2,12 +2,12 @@
 
 ## Overview
 
-This measurement plug-in demonstrates the example for the abstraction layer for the instruments.
+This repo contains the example for the measurement plug-ins.
 
-## Key Features
+## Available example measurement plug-ins
 
-1. Example for the Hardware Abstarction Layer using the NI-DMM and Keysight DMM.
-2. Example fore the Functional Abstraction Layer using the NI-DMM, KeySight DMM and NI-DCPower.
+1. EHardware Abstarction Layer using the NI-DMM and Keysight DMM.
+2. Functional Abstraction Layer using the NI-DMM, KeySight DMM and NI-DCPower.
 
 ## Software Installation
 1. LabVIEW 2021 SP1 64-bit or later
