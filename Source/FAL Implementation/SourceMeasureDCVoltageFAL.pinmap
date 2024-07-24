@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PinMap xmlns="http://www.ni.com/TestStand/SemiconductorModule/PinMap.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" schemaVersion="1.6">
+	<Instruments>
+		<NIDCPowerInstrument name="NI-DCPower" numberOfChannels="4">
+			<ChannelGroup name="CommonDCPowerChannelGroup" />
+		</NIDCPowerInstrument>
+		<NIDmmInstrument name="NI-DMM" />
+		<Instrument name="VISA-DMM" instrumentTypeId="KeysightDmm">
+			<Channel id="0" />
+		</Instrument>
+	</Instruments>
+	<Pins>
+		<DUTPin name="NI_DCPower_Pin" />
+		<DUTPin name="NI_DMM_Pin" />
+		<DUTPin name="Keysight_DMM_Pin" />
+	</Pins>
+	<PinGroups></PinGroups>
+	<Sites>
+		<Site siteNumber="0" />
+	</Sites>
+	<Connections>
+		<Connection pin="NI_DCPower_Pin" siteNumber="0" instrument="NI-DCPower" channel="0" />
+		<Connection pin="NI_DMM_Pin" siteNumber="0" instrument="NI-DMM" channel="0" />
+		<Connection pin="Keysight_DMM_Pin" siteNumber="0" instrument="VISA-DMM" channel="0" />
+	</Connections>
+</PinMap>
