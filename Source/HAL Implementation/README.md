@@ -9,7 +9,6 @@
   - [How to simulate NI-DMM and Keysight DMM?](#how-to-simulate-ni-dmm-and-keysight-dmm)
     - [To simulate NI-DMM](#to-simulate-ni-dmm)
     - [To simulate Keysight 34001A via VISA-TCP\IP simulation](#to-simulate-keysight-34001a-via-visa-tcpip-simulation)
-  - [Note](#note)
 
 ## Dmm Measurement
 
@@ -48,7 +47,8 @@ This example requires :
 - The DmmMeasurementHAL example in abstraction-layer repository uses HAL for different DMM instruments.
 - The HAL example implementation involves the following modules or classes:
   - DMM_Base - The base class for the instrument models.
-  - Instrument Model - The implementations of various categories of Dmm instrument classes ([niDMM](../../labview_hal/HAL/Instruments/niDMM) and [KeysightDmm](../../labview_hal/HAL/Instruments/KeysightDmm)).
+  - Instrument Model - The implementations of various categories of Dmm instrument classes ([niDMM](https://github.com/NI-Measurement-Plug-Ins/abstraction-layer-labview/tree/main/Source/HAL%20Implementation/HAL/Instruments/DMM_Models/niDMM) and [KeysightDmm](https://github.com/NI-Measurement-Plug-Ins/abstraction-layer-labview/tree/main/Source/HAL%20Implementation/HAL/Instruments/DMM_Models/KeysightDmm)).
+
   ![HAL Class Hierarchy](<HAL Class Hierarchy.png>)
 
 ## How to simulate NI-DMM and Keysight DMM?
@@ -73,12 +73,3 @@ This example requires :
 - Verify Validate opens the port.
 - Enter the alias name as `VISA-DMM`
 - In pin map verify if the custom instrument is named as `VISA-DMM`
-
-## Note
-
-- This measurement uses the `DmmMeasurementHAL.pinmap` file, which includes two custom DMM instruments:
-  `GPIB0::3::INSTR (simulated)` and `VISA-DMM (physical)`, both identified with the instrument
-  type ID `KeysightDmm`. Currently, the Initialize and Register Sessions.vi and Unregister and Close Sessions.vi
-  only support initializing a single session of a specific instrument type ID. Therefore, before
-  executing the TestStand sequence, ensure to remove the simulated instrument (GPIB0::3::INSTR) if
-  you have a physical instrument (VISA-DMM) connected, or vice versa.

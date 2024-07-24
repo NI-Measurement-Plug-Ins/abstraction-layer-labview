@@ -31,7 +31,7 @@ Hardware Abstraction Layer (HAL) enables users to develop software applications 
       - ***Initialize*** - Initializes the instrument session.
       - ***Configure*** - Configures the input parameters for the selected instrument.
       - ***Measure*** - Takes measurement output from the instrument.
-4. Implement the VIs under [Utility](../../Source/HAL Implementation/HAL/Instruments/DMM_Base/Utility) in the instrument base class.
+4. Implement the VIs under [Utility](https://github.com/NI-Measurement-Plug-Ins/abstraction-layer-labview/tree/main/Source/HAL%20Implementation/HAL/Instruments/DMM_Base/Utility) in the instrument base class.
 5. Create child classes that inherits from the instrument base class and implement the overriding methods. The instrument child class name should match with the instrument type id in the pin map file and the directory name of the instrument child class. The directory names for different NI instrument types are:
 
    Instrument type | Directory name
@@ -57,7 +57,7 @@ Hardware Abstraction Layer (HAL) enables users to develop software applications 
 
     ![Close MeasurementLink Session](<HAL Images/KeysightDmm Close MeasurementLink Session.png>)
 
-8. Copy the VIs under [Reusables](../../Source/HAL Implementation/HAL/Reusables). Make sure to update the logic of `Get Instrument Path.vi` to get the path of the child class directory.
+8. Copy the VIs under [Reusables](https://github.com/NI-Measurement-Plug-Ins/abstraction-layer-labview/tree/main/Source/HAL%20Implementation/HAL/Reusables). Make sure to update the logic of `Get Instrument Path.vi` to get the path of the child class directory.
 9. Define the inputs and outputs in the measurement plug-ins and update the `Get Type Specialization.vi` to populate the pin information from pin map file.
 10. Update the Measurement logic with the below APIs:
     - ***Reserve Session.vi*** - a polymorphic VI for reserving either a single pin or multiple pins together.
@@ -68,5 +68,5 @@ Hardware Abstraction Layer (HAL) enables users to develop software applications 
 
 ## Migrate the existing instrument class to Measurement Plug-In
 
-1. Create a measurement plug-in by following the steps mentioned in [Developing a measurement plug-in with LabVIEW](https://www.ni.com/docs/en-US/bundle/measurementplugins/page/labview-measurements.html)
+1. Create a measurement plug-in by following the steps mentioned in [Developing a measurement plug-in with LabVIEW](https://github.com/ni/measurement-plugin-labview?tab=readme-ov-file#developing-a-labview-measurement)
 2. Copy the existing instrument classes to the project and follow from step 3-10 of [Steps to create new HAL based measurement](#steps-to-create-new-hal-based-measurement) for migrating the existing instrument classes to measurement plug-in.

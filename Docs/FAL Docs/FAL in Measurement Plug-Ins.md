@@ -22,7 +22,7 @@ The Functional Abstraction Layer (FAL) is a higher-level abstraction layer that 
 2. Copy the `Abstract_Instrument` base class and its methods into the project. Ensure to inherit the Abstract_Instrument class from `ISession Factory` interface.
 3. Create function interface and implement the dynamic dispatch method for the required functionality.
     ![Base class and Function Interface](<FAL Images/Base and Function class.png>)
-4. Implement a VI in the function interface that typecasts the `Abstract_Instrument` class object to function interface object. Refer [Utility](../../Source/FAL Implementation/FAL/Functions/Measure_Voltage/Utility) for more details.
+4. Implement a VI in the function interface that typecasts the `Abstract_Instrument` class object to function interface object. Refer [Utility](https://github.com/NI-Measurement-Plug-Ins/abstraction-layer-labview/tree/main/Source/FAL%20Implementation/FAL/Functions/Measure_Voltage/Utility) for more details.
 5. Create instrument child class `<instrument_type_id>` inherited from `Abstract_Instrument` class and the `function interface`. The instrument child class name should match with the instrument type id in the pin map file and the directory name of the instrument child class. The directory names for different NI instrument types are:
 
    Instrument type | Directory name
@@ -50,7 +50,7 @@ The Functional Abstraction Layer (FAL) is a higher-level abstraction layer that 
         ![Close MeasurementLink Session](<FAL Images/KeysightDmm Close MeasurementLink Session.png>)
 
 8. Create the overriding method for the dynamic dispatch function interface method in the instrument child class. The function methods can vary based on the function type and hence, the users can have their own function methods defined for both their function interface and child classes respectively.
-9. Copy the VIs under [Reusables](../../Source/FAL Implementation/FAL/Reusables) into the project. Make sure to update the logic of `Get Instrument Path.vi` to get the path of the child class directory.
+9. Copy the VIs under [Reusables](https://github.com/NI-Measurement-Plug-Ins/abstraction-layer-labview/tree/main/Source/FAL%20Implementation/FAL/Reusables) into the project. Make sure to update the logic of `Get Instrument Path.vi` to get the path of the child class directory.
 10. Define the inputs and outputs in the measurement plug-ins and update the `Get Type Specialization.vi` to populate the pin information from pin map file.
 11. Update the measurement logic with the below APIs:
     - ***Initialize Pin.vi*** - a polymorphic VI for reserving measurement plug-ins and driver sessions. Returns an array of `Abstract_Instrument` objects based on pin input.
@@ -61,5 +61,5 @@ The Functional Abstraction Layer (FAL) is a higher-level abstraction layer that 
 
 ## Steps to migrate FAL implementations from other frameworks
 
-1. Create a measurement plug-in by following the steps mentioned in [Developing a measurement plug-in with LabVIEW](https://www.ni.com/docs/en-US/bundle/measurementplugins/page/labview-measurements.html)
+1. Create a measurement plug-in by following the steps mentioned in [Developing a measurement plug-in with LabVIEW](https://github.com/ni/measurement-plugin-labview?tab=readme-ov-file#developing-a-labview-measurement)
 2. Copy the existing FAL classes to the project and follow from step 2-10 of [Steps to create new FAL based measurement](#steps-to-create-new-fal-based-measurement) for migrating the existing FAL implementations to measurement plug-in.
