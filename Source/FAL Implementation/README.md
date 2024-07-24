@@ -9,7 +9,6 @@
   - [How to simulate NI-DMM, NI-DCPower and Keysight DMM?](#how-to-simulate-ni-dmm-ni-dcpower-and-keysight-dmm)
     - [To simulate NI instruments](#to-simulate-ni-instruments)
     - [To simulate Keysight DMM via VISA-TCP\IP simulation](#to-simulate-keysight-dmm-via-visa-tcpip-simulation)
-  - [Note](#note)
 
 ## Source Measure DC Voltage Measurement
 
@@ -52,7 +51,8 @@ The FAL library implementation involves the following modules or classes:
 
 1. Abstract_Instrument - The base class for the instrument models.
 2. Function Interface - Functionally abstracts the instruments by providing function interfaces for the instrument child classes to inherit.
-3. Instrument Model - The implementations of various categories of instrument model classes ([niDMM](../../labview_fal/FAL/Instruments/niDMM), [KeysightDmm](../../labview_fal/FAL/Instruments/KeysightDmm) and [niDCPower](../../labview_fal/FAL/Instruments/niDCPower)).
+3. Instrument Model - The implementations of various categories of instrument model classes ([niDMM](https://github.com/NI-Measurement-Plug-Ins/abstraction-layer-labview/tree/main/Source/FAL%20Implementation/FAL/Instruments/Instrument_Models/niDMM), [KeysightDmm](https://github.com/NI-Measurement-Plug-Ins/abstraction-layer-labview/tree/main/Source/FAL%20Implementation/FAL/Instruments/Instrument_Models/KeysightDmm) and [niDCPower](https://github.com/NI-Measurement-Plug-Ins/abstraction-layer-labview/tree/main/Source/FAL%20Implementation/FAL/Instruments/Instrument_Models/niDCPower)).
+
     ![FAL Class Hierarchy](<FAL Class Hierarchy.png>)
 
 ## How to simulate NI-DMM, NI-DCPower and Keysight DMM?
@@ -76,11 +76,3 @@ The FAL library implementation involves the following modules or classes:
 - Verify Validate opens the port.
 - Enter the alias name as `VISA-DMM`
 - In pin map verify if the custom instrument is named as `VISA-DMM`
-
-## Note
-
-- This measurement uses the `SourceMeasureDCVoltageFAL.pinmap` file, which includes one DC-Power
-  instrument and two custom DMM instruments: `GPIB0::3::INSTR (simulated)` and `VISA-DMM(physical)`,
-  both identified with the instrument type ID `KeysightDmm`. Currently, the Initialize and Register Sessions.vi and Unregister and Close Sessions.vi
-  only support initializing a single session of a specific instrument type ID,  ensure to remove the simulated instrument (GPIB0::3::INSTR) if you have a
-  physical instrument (VISA-DMM) connected, or vice versa.
