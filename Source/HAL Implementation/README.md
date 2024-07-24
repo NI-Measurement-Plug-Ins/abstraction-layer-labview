@@ -13,9 +13,9 @@
 
 ## Dmm Measurement
 
-This measurement plug-in example acquires a single measurement from either **NI-DMM** or **Keysight DMM** using the Hardware Abstraction Layer (HAL).
+This measurement plug-in example acquires DC voltage from either **NI-DMM** or **Keysight DMM** using the Hardware Abstraction Layer (HAL).
 
-Select the pin_name as `NI_DMM_PIN` to measure from NI-DMM or select `Keysight_DMM_Pin` to measure from Keysight DMM. Select the measurement function and range. Specify the resolution in digits of precision. The measured value will be displayed in the measurement indicator.
+Select the pin_name as `NI_DMM_PIN` to measure from NI-DMM or select `Keysight_DMM_Pin` to measure from Keysight DMM. Select the measurement function and range. Specify the resolution in digits of precision. The measured DC voltage will be displayed in the measurement indicator.
 
 ## Features
 
@@ -41,7 +41,7 @@ This example requires :
 - NI-DMM (e.g. PXIe-4081).
 - Keysight 34401A or compatible DMM.
   - By default, the pin map included with this example uses the instrument name
-  `VISA-DMM`. If this doesn't match your instrument name in NI Max, update alias of Keysight 34401A DMM to `VISA-DMM`in NI Max.
+  `VISA-DMM`. Please update the alias of Keysight 34401A DMM to `VISA-DMM`in NI MAX.
 
 ## HAL Class Hierarchy
 
@@ -56,8 +56,8 @@ This example requires :
 ### To simulate NI-DMM
 
 - Open NI MAX and navigate to My System > Devices and Interfaces.
-- Right-click in the Devices and Interfaces section and select Create New.
-- Choose Simulated NI-DAQmx Device or Modular Instrument.
+- Right-click in the Devices and Interfaces section and select `Create New`.
+- Choose `Simulated NI-DAQmx Device or Modular Instrument` and click `Finish`.
 - Search for the niDMM model (e.g., PXIe-4081).
 - Select the model and click OK
 - The simulated niDMM will appear under My System > Devices and Interfaces.
@@ -65,13 +65,13 @@ This example requires :
 ### To simulate Keysight 34001A via VISA-TCP\IP simulation
 
 - Run the `<repo> labview_fal\Utilities\KeysightDmm Simulation\Simulate_Keysight_34401a_TCP.vi` with port 50000 and desired timeout in ms.
-- Open NI Max application.
+- Open NI MAX application.
 - Create a new VISA TCP/IP Resource under Devices and Interfaces -> NetworkDevices.
 - Select manual entry of raw socket and click next
 - Now enter the host address as localhost and port 50000 (consistent with port number in simulation vi).
 - Verify Validate opens the port.
-- Enter the alias name as VISA-DMM
-- In pin map verify if the custom instrument is named as VISA-DMM
+- Enter the alias name as `VISA-DMM`
+- In pin map verify if the custom instrument is named as `VISA-DMM`
 
 ## Note
 

@@ -13,9 +13,9 @@
 
 ## Source Measure DC Voltage Measurement
 
-This measurement plug-in example sources a single voltage value to NI-DCPower and measures a single voltage value from either NI-DCPower, NI-DMM or Keysight DMM instruments through Functional Abstraction Layer (FAL).
+This measurement plug-in example sources DC voltage value using NI-DCPower and measures back the DC voltage level from either NI-DCPower, NI-DMM or Keysight DMM instruments through Functional Abstraction Layer (FAL).
 
-Select the **Source Pin** name as `VDD_NI_DCPower` to source the NI-DCPower instrument and select the **Measure Pin** name either as `VDD_NI_DMM`, `VDD_NI_DCPower` or `VDD_Keysight_DMM` to measure from NI-DMM, NI-DCPower or Keysight DMM instrument respectively. Select the measurement values, source delay and range. Specify the resolution in digits of precision. The measured value will be displayed in the measurement indicator.
+Select the **Source Pin** name as `VDD_NI_DCPower` to source the NI-DCPower instrument and select the **Measure Pin** name either as `VDD_NI_DMM`, `VDD_NI_DCPower` or `VDD_Keysight_DMM` to measure from NI-DMM, NI-DCPower or Keysight DMM instrument respectively. Select the voltage level, source delay and range. Specify the resolution in digits of precision. The measured value will be displayed in the measurement indicator.
 
 ## Features
 
@@ -42,7 +42,7 @@ This example requires :
 - NI-DCPower (e.g. PXIe-4141).
 - Keysight 34401A or compatible DMM.
   - By default, the pin map included with this example uses the instrument name
-  `VISA-DMM`. If this doesn't match your instrument name in NI Max, update alias of Keysight 34401A DMM to `VISA-DMM`in NI Max.
+  `VISA-DMM`. Please update the alias of Keysight 34401A DMM to `VISA-DMM`in NI MAX.
 
 ## FAL Class Hierarchy
 
@@ -60,22 +60,21 @@ The FAL library implementation involves the following modules or classes:
 ### To simulate NI instruments
 
 - Launch NI MAX.
-- Right-click on Devices and Interfaces in the MAX configuration tree and select Create New.
-- In the Create New dialog, choose NI-DAQmx Simulated Device and click Finish.
-- The Choose Device dialog will open. Search for `PXIe-4141(NI-DCPower)/PXIe-4081(NI-DMM)` device model or navigate the list to find the device.
-- Select the device model `PXIe-4141/4081` and click OK.
+- Right-click on Devices and Interfaces in the MAX configuration tree and select `Create New`.
+- In the Create New dialog, `Simulated NI-DAQmx Device or Modular Instrument` and click `Finish`.
+- Search and Select the device model `PXIe-4141` for NI-DCPower and `PXIe-4081` for NI-DMM and click `OK`.
 - The simulated device will now appear in NI MAX under My System > Devices and Interfaces.
 
 ### To simulate Keysight DMM via VISA-TCP\IP simulation
 
 - Run the `<repo> labview_fal\Utilities\KeysightDmm Simulation\Simulate_Keysight_34401a_TCP.vi` with port 50000 and desired timeout in ms.
-- Open NI Max application.
+- Open NI MAX application.
 - Create a new VISA TCP/IP Resource under Devices and Interfaces -> NetworkDevices.
 - Select manual entry of raw socket and click next.
 - Now enter the host address as localhost and port 50000 (consistent with port number in simulation vi).
 - Verify Validate opens the port.
-- Enter the alias name as VISA-DMM
-- In pin map verify if the custom instrument is named as VISA-DMM
+- Enter the alias name as `VISA-DMM`
+- In pin map verify if the custom instrument is named as `VISA-DMM`
 
 ## Note
 
