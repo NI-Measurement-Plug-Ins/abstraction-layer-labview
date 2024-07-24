@@ -5,9 +5,6 @@
 			<ChannelGroup name="CommonDCPowerChannelGroup" />
 		</NIDCPowerInstrument>
 		<NIDmmInstrument name="NI-DMM" />
-		<Instrument name="GPIB0::3::INSTR" instrumentTypeId="KeysightDmm">
-			<Channel id="0" />
-		</Instrument>
 		<Instrument name="VISA-DMM" instrumentTypeId="KeysightDmm">
 			<Channel id="0" />
 		</Instrument>
@@ -16,7 +13,6 @@
 		<DUTPin name="NI_DCPower_Pin" />
 		<DUTPin name="NI_DMM_Pin" />
 		<DUTPin name="Keysight_DMM_Pin" />
-		<DUTPin name="Sim_Keysight_DMM_Pin" />
 	</Pins>
 	<PinGroups></PinGroups>
 	<Sites>
@@ -26,6 +22,5 @@
 		<Connection pin="NI_DCPower_Pin" siteNumber="0" instrument="NI-DCPower" channel="0" />
 		<Connection pin="NI_DMM_Pin" siteNumber="0" instrument="NI-DMM" channel="0" />
 		<Connection pin="Keysight_DMM_Pin" siteNumber="0" instrument="VISA-DMM" channel="0" />
-		<Connection pin="Sim_Keysight_DMM_Pin" siteNumber="0" instrument="GPIB0::3::INSTR" channel="0" />
 	</Connections>
 </PinMap>
