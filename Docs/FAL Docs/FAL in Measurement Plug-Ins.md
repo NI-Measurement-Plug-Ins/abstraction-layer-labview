@@ -22,7 +22,7 @@ The Functional Abstraction Layer (FAL) is a higher-level abstraction layer that 
 2. Copy the `Abstract_Instrument` base class and its methods into the project. Ensure to inherit the Abstract_Instrument class from `ISession Factory` interface.
 3. Create function interface and implement the dynamic dispatch method for the required functionality.
     ![Base class and Function Interface](<FAL Images/Base and Function class.png>)
-4. Implement a VI in the function interface that typecasts the `Abstract_Instrument` class object to function interface object. Refer [Utility](../../labview_fal/FAL/Functions/Measure_Voltage/Utility) for more details.
+4. Implement a VI in the function interface that typecasts the `Abstract_Instrument` class object to function interface object. Refer [Utility](../../Source/FAL Implementation/FAL/Functions/Measure_Voltage/Utility) for more details.
 5. Create instrument child class `<instrument_type_id>` inherited from `Abstract_Instrument` class and the `function interface`. The instrument child class name should match with the instrument type id in the pin map file and the directory name of the instrument child class. The directory names for different NI instrument types are:
 
    Instrument type | Directory name
@@ -50,7 +50,7 @@ The Functional Abstraction Layer (FAL) is a higher-level abstraction layer that 
         ![Close MeasurementLink Session](<FAL Images/KeysightDmm Close MeasurementLink Session.png>)
 
 8. Create the overriding method for the dynamic dispatch function interface method in the instrument child class. The function methods can vary based on the function type and hence, the users can have their own function methods defined for both their function interface and child classes respectively.
-9. Copy the VIs under [Reusables](../../labview_fal/FAL/Reusables) into the project. Make sure to update the logic of `Get Instrument Path.vi` to get the path of the child class directory.
+9. Copy the VIs under [Reusables](../../Source/FAL Implementation/FAL/Reusables) into the project. Make sure to update the logic of `Get Instrument Path.vi` to get the path of the child class directory.
 10. Define the inputs and outputs in the measurement plug-ins and update the `Get Type Specialization.vi` to populate the pin information from pin map file.
 11. Update the measurement logic with the below APIs:
     - ***Initialize Pin.vi*** - a polymorphic VI for reserving measurement plug-ins and driver sessions. Returns an array of `Abstract_Instrument` objects based on pin input.

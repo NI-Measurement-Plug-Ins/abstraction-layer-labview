@@ -31,7 +31,7 @@ Hardware Abstraction Layer (HAL) enables users to develop software applications 
       - ***Initialize*** - Initializes the instrument session.
       - ***Configure*** - Configures the input parameters for the selected instrument.
       - ***Measure*** - Takes measurement output from the instrument.
-4. Implement the VIs under [Utility](../../labview_hal/HAL/Instruments/DMM_Base/Utility) in the instrument base class.
+4. Implement the VIs under [Utility](../../Source/HAL Implementation/HAL/Instruments/DMM_Base/Utility) in the instrument base class.
 5. Create child classes that inherits from the instrument base class and implement the overriding methods. The instrument child class name should match with the instrument type id in the pin map file and the directory name of the instrument child class. The directory names for different NI instrument types are:
 
    Instrument type | Directory name
@@ -57,7 +57,7 @@ Hardware Abstraction Layer (HAL) enables users to develop software applications 
 
     ![Close MeasurementLink Session](<HAL Images/KeysightDmm Close MeasurementLink Session.png>)
 
-8. Copy the VIs under [Reusables](../../labview_hal/HAL/Reusables). Make sure to update the logic of `Get Instrument Path.vi` to get the path of the child class directory.
+8. Copy the VIs under [Reusables](../../Source/HAL Implementation/HAL/Reusables). Make sure to update the logic of `Get Instrument Path.vi` to get the path of the child class directory.
 9. Define the inputs and outputs in the measurement plug-ins and update the `Get Type Specialization.vi` to populate the pin information from pin map file.
 10. Update the Measurement logic with the below APIs:
     - ***Reserve Session.vi*** - a polymorphic VI for reserving either a single pin or multiple pins together.
