@@ -471,29 +471,29 @@
                     <ProcessDuringStaging>true</ProcessDuringStaging>
                 </DistributionItem>
             </DistributionItems>
-            <Name>SourceMeasureDCVoltage</Name>
+            <Name>Source Measure DC Voltage FAL (LabVIEW)</Name>
             <OutputDirectory>Packages</OutputDirectory>
             <PluginConfigurationOptions />
             <PrebuildAnalysisEnabled>true</PrebuildAnalysisEnabled>
             <Architecture>windows_x64</Architecture>
             <AutoIncrementVersion>Build</AutoIncrementVersion>
             <BuildStatus z:Id="i70">
-                <BuildEverSuccessful>true</BuildEverSuccessful>
-                <FileName>ni-source-measure-dcvoltage_1.0.0.1_windows_x64.nipkg</FileName>
-                <Version>1.0.0.1</Version>
+                <FileName />
+                <Version>none</Version>
             </BuildStatus>
             <CompanyName>MyCompany</CompanyName>
             <CustomExecutes />
-            <DisplayName>SourceMeasureDCVoltage</DisplayName>
-            <FileName>ni-source-measure-dcvoltage_1.0.0.1_windows_x64.nipkg</FileName>
+            <Description>Measurement plug-in example to source DC voltage using NI SMU and measure the same using an NI SMU or DMM.</Description>
+            <DisplayName>Source Measure DC Voltage FAL (LabVIEW)</DisplayName>
+            <FileName>source-measure-dc-voltage-fal-lv_1.0.0.1_windows_x64.nipkg</FileName>
             <MaintainerEmail>santhosh.ramaraj@ni.com</MaintainerEmail>
-            <MaintainerName>Github Community</MaintainerName>
+            <MaintainerName>National Instruments</MaintainerName>
             <Messages xmlns:d4p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
-            <PackageName>ni-source-measure-dcvoltage</PackageName>
+            <PackageName>source-measure-dc-voltage-fal-lv</PackageName>
             <PackageRelationships />
             <ProductName>MyProduct</ProductName>
             <Section>Add-Ons</Section>
-            <Synopsis>mycompany-myproduct</Synopsis>
+            <Synopsis>FAL Plug-ins</Synopsis>
             <Version>1.0.0.1</Version>
         </Distribution>
     </Distributions>
