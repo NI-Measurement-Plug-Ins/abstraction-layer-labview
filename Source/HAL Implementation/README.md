@@ -8,7 +8,7 @@
   - [HAL Class Hierarchy](#hal-class-hierarchy)
   - [How to simulate NI-DMM and Keysight DMM?](#how-to-simulate-ni-dmm-and-keysight-dmm)
     - [To simulate NI-DMM](#to-simulate-ni-dmm)
-    - [To simulate Keysight 34001A via VISA-TCP\IP simulation](#to-simulate-keysight-34001a-via-visa-tcpip-simulation)
+    - [To simulate Keysight DMM](#to-simulate-keysight-dmm)
 
 ## Dmm Measurement
 
@@ -62,9 +62,9 @@ This example requires :
 - Select the model and click OK
 - The simulated niDMM will appear under My System > Devices and Interfaces.
 
-### To simulate Keysight 34001A via VISA-TCP\IP simulation
+### To simulate Keysight DMM
 
-- Run the `<repo>\Source\Shared\KeysightDmm Simulation\Simulate Keysight 34401a TCP.vi` with port 50000 and desired timeout in ms.
+- Run the `<repo>\Source\Shared\KeysightDmm Simulation\Keysight 34401a Simulator.vi` with port 50000 and desired timeout in ms.
 - Open NI MAX application.
 - Expand Devices and Interfaces and Network Devices will be displayed.
 - Right click Network Devices and click create a new VISA TCP/IP Resource.

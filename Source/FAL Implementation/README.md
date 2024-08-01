@@ -8,7 +8,7 @@
   - [FAL Class Hierarchy](#fal-class-hierarchy)
   - [How to simulate NI-DMM, NI-DCPower and Keysight DMM?](#how-to-simulate-ni-dmm-ni-dcpower-and-keysight-dmm)
     - [To simulate NI instruments](#to-simulate-ni-instruments)
-    - [To simulate Keysight DMM via VISA-TCP\IP simulation](#to-simulate-keysight-dmm-via-visa-tcpip-simulation)
+    - [To simulate Keysight DMM](#to-simulate-keysight-dmm)
 
 ## Source Measure DC Voltage Measurement
 
@@ -65,9 +65,9 @@ The FAL library implementation involves the following modules or classes:
 - Search and Select the device model `PXIe-4141` for NI-DCPower and `PXIe-4081` for NI-DMM and click `OK`.
 - The simulated device will now appear in NI MAX under My System > Devices and Interfaces.
 
-### To simulate Keysight DMM via VISA-TCP\IP simulation
+### To simulate Keysight DMM
 
-- Run the `<repo>\Source\Shared\KeysightDmm Simulation\Simulate Keysight 34401a TCP.vi` with port 50000 and desired timeout in ms.
+- Run the `<repo>\Source\Shared\KeysightDmm Simulation\Keysight 34401a Simulator.vi` with port 50000 and desired timeout in ms.
 - Open NI MAX application.
 - Expand Devices and Interfaces and Network Devices will be displayed.
 - Right click Network Devices and click create a new VISA TCP/IP Resource.
