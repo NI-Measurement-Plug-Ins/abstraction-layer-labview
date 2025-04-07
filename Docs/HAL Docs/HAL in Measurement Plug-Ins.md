@@ -65,6 +65,8 @@ Hardware Abstraction Layer (HAL) enables users to develop software applications 
     - ***Measurement APIs*** from the instrument base class that includes `Initialize`, `Configure` and the `Measure` for measuring the instrument.
     - ***Close Session*** and ***Unreserve Session*** for closing and unreserving the measurement plug-ins sessions.
     ![Measurement Logic](<HAL Images/Measurement Logic.png>)
+  
+![Block Diagram](<HAL Images/Block Diagram.png>)
 
 ## Migrate the existing instrument class to Measurement Plug-In
 

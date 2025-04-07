@@ -58,6 +58,8 @@ The Functional Abstraction Layer (FAL) is a higher-level abstraction layer that 
     - ***Function interface dynamic dispatch API*** for the instrument child class to override the function methods.
     - ***Close Session*** and ***Unreserve Session*** for closing and unreserving the measurement plug-ins sessions.
     ![Measurement Logic](<FAL Images/Measurement Logic.png>)
+    
+![Block Diagram](<FAL Images/Block Diagram.png>)
 
 ## Steps to migrate FAL implementations from other frameworks
 
