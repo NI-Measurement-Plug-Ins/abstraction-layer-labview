@@ -42,33 +42,35 @@
 	</Item>
 	<Item Name="Methods" Type="Folder">
 		<Property Name="NI.SortType" Type="Int">3</Property>
-		<Item Name="Measure Voltage" Type="Folder">
+		<Item Name="Configure Voltage" Type="Folder">
 			<Item Name="Configure_Voltage_Level.vi" Type="VI" URL="../Methods/Measure Voltage/Configure_Voltage_Level.vi">
-				<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">)1#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!%=!!!!#A!-1#%'=X2B&gt;(6T!!!,1!-!"'.P:'5!!""!-0````]'=W^V=G.F!!!71&amp;!!!Q!!!!%!!AFF=H*P=C"P&gt;81!"!!!!#J!=!!?!!!4%7ZJ2%.1&lt;X&gt;F=CZM&gt;G.M98.T!!VO;52$5'^X:8)A&lt;X6U!#"!5!!$!!!!!1!#%W6S=G^S)'FO)#BO&lt;S"F=H*P=CE!#U!+!!6-:8:F&lt;!!K1(!!(A!!%R&amp;O;52$5'^X:8)O&lt;(:D&lt;'&amp;T=Q!-&lt;GF%1V"P&gt;W6S)'FO!!"5!0!!$!!$!!1!"!!&amp;!!1!"!!%!!1!"A!%!!=!#!-!!(A!!!U)!!!!!!!!!!!!!)U,!!!!!!!!!!!!!!!!!!!!!!!!#A!!!!!!!!!)!!!!E!!!!!!"!!E!!!!!</Property>
+				<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">)1#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!%L!!!!#A!-1#%'=X2B&gt;(6T!!!,1!-!"'.P:'5!!""!-0````]'=W^V=G.F!!!71&amp;!!!Q!!!!%!!AFF=H*P=C"P&gt;81!"!!!!#R!=!!?!!!4%7ZJ2%.1&lt;X&gt;F=CZM&gt;G.M98.T!!Z/33V%1V"P&gt;W6S)'^V&gt;!!!)%"1!!-!!!!"!!)4:8*S&lt;X)A;7YA+'ZP)'6S=G^S+1!,1!I!"5RF&gt;G6M!#J!=!!?!!!4%7ZJ2%.1&lt;X&gt;F=CZM&gt;G.M98.T!!V/33V%1V"P&gt;W6S)'FO!'%!]!!-!!-!"!!%!!5!"!!%!!1!"!!'!!1!"Q!)!Q!!?!!!$1A!!!!!!!!!!!!!$1M!!!!!!!!!!!!!!!!!!!!!!!!+!!!!!!!!!"!!!!!1!!!.!!!!$!!!!!!!!!!!!!!"!!E!!!!!</Property>
 				<Property Name="NI.ClassItem.ExecutionSystem" Type="Int">-1</Property>
 				<Property Name="NI.ClassItem.Flags" Type="Int">0</Property>
-				<Property Name="NI.ClassItem.IsStaticMethod" Type="Bool">false</Property>
+				<Property Name="NI.ClassItem.IsStaticMethod" Type="Bool">true</Property>
 				<Property Name="NI.ClassItem.MethodScope" Type="UInt">1</Property>
 				<Property Name="NI.ClassItem.Priority" Type="Int">1</Property>
 				<Property Name="NI.ClassItem.State" Type="Int">1342710288</Property>
 			</Item>
 			<Item Name="Configure_Voltage_Range.vi" Type="VI" URL="../Methods/Measure Voltage/Configure_Voltage_Range.vi">
-				<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">)1#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!)-!!!!$!!-1#%'=X2B&gt;(6T!!!,1!-!"'.P:'5!!""!-0````]'=W^V=G.F!!!71&amp;!!!Q!!!!%!!AFF=H*P=C"P&gt;81!"!!!!#R!=!!?!!!4%7ZJ2%.1&lt;X&gt;F=CZM&gt;G.M98.T!!Z/33V%1X"P&gt;W6S)'^V&gt;!!!MU!8!!U)2%-A6G^M&gt;(-)15-A6G^M&gt;(-+2%-A1X6S=G6O&gt;!J"1S"$&gt;8*S:7ZU%4)N&gt;WFS:3"3:8.J=X2B&lt;G.F%41N&gt;WFS:3"3:8.J=X2B&lt;G.F"52J&lt;W2F#5:S:8&amp;V:7ZD?1:1:8*J&lt;W1415-A6G^M&gt;(-A2%-A1W^V='RF:!N$98"B9WFU97ZD:1J*&lt;G2V9X2B&lt;G.F#V2F&lt;8"F=G&amp;U&gt;8*F!"".:7&amp;T&gt;8*F&lt;76O&gt;#"5?8"F!!!A1&amp;!!!Q!!!!%!!B.F=H*P=C"J&lt;C!I&lt;G]A:8*S&lt;X)J!$N!&amp;Q!&amp;"4-A-3]S"41A-3]S"45A-3]S"49A-3]S"4=A-3]S!"23:8.P&lt;(6U;7^O)'FO)%2J:WFU=Q!!#U!+!!6397ZH:1!K1(!!(A!!%R&amp;O;52$5'^X:8)O&lt;(:D&lt;'&amp;T=Q!.4EEN2%.1&lt;X&gt;F=C"J&lt;A"5!0!!$!!$!!1!"!!&amp;!!1!"!!'!!1!"Q!)!!E!#A-!!(A!!!U)!!!!!!!!!!!!!)U,!!!!!!!!!!!!!!A!!!!!!!!!#A!!!!A!!!!)!!!!E!!!!!!"!!M!!!!!</Property>
+				<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">)1#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!):!!!!$!!-1#%'=X2B&gt;(6T!!!,1!-!"'.P:'5!!""!-0````]'=W^V=G.F!!!71&amp;!!!Q!!!!%!!AFF=H*P=C"P&gt;81!"!!!!#R!=!!?!!!4%7ZJ2%.1&lt;X&gt;F=CZM&gt;G.M98.T!!Z/33V%1X"P&gt;W6S)'^V&gt;!!!MU!8!!U)2%-A6G^M&gt;(-)15-A6G^M&gt;(-+2%-A1X6S=G6O&gt;!J"1S"$&gt;8*S:7ZU%4)N&gt;WFS:3"3:8.J=X2B&lt;G.F%41N&gt;WFS:3"3:8.J=X2B&lt;G.F"52J&lt;W2F#5:S:8&amp;V:7ZD?1:1:8*J&lt;W1415-A6G^M&gt;(-A2%-A1W^V='RF:!N$98"B9WFU97ZD:1J*&lt;G2V9X2B&lt;G.F#V2F&lt;8"F=G&amp;U&gt;8*F!"".:7&amp;T&gt;8*F&lt;76O&gt;#"5?8"F!!!A1&amp;!!!Q!!!!%!!B.F=H*P=C"J&lt;C!I&lt;G]A:8*S&lt;X)J!$N!&amp;Q!&amp;"4-A-3]S"41A-3]S"45A-3]S"49A-3]S"4=A-3]S!"23:8.P&lt;(6U;7^O)'FO)%2J:WFU=Q!!#U!+!!6397ZH:1!K1(!!(A!!%R&amp;O;52$5'^X:8)O&lt;(:D&lt;'&amp;T=Q!.4EEN2%.1&lt;X&gt;F=C"J&lt;A"B!0!!$!!$!!1!"!!&amp;!!1!"!!'!!1!"Q!)!!E!#A-!!(A!!!U)!!!!!!!!!!!!!!U,!!!!!!!!!!!!!"!!!!!!!!!!#A!!!!A!!!!1!!!!%!!!$1!!!!Q!!!!!!!!!!!!!!1!,!!!!!!</Property>
+				<Property Name="NI.ClassItem.ExecutionSystem" Type="Int">-1</Property>
+				<Property Name="NI.ClassItem.Flags" Type="Int">0</Property>
+				<Property Name="NI.ClassItem.IsStaticMethod" Type="Bool">true</Property>
+				<Property Name="NI.ClassItem.MethodScope" Type="UInt">1</Property>
+				<Property Name="NI.ClassItem.Priority" Type="Int">1</Property>
+				<Property Name="NI.ClassItem.State" Type="Int">1342710288</Property>
+			</Item>
+		</Item>
+		<Item Name="Measure Voltage" Type="Folder">
+			<Item Name="Measure_Voltage.vi" Type="VI" URL="../Methods/Measure Voltage/Measure_Voltage.vi">
+				<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">)1#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!'(!!!!$A!-1#%'=X2B&gt;(6T!!!,1!-!"'.P:'5!!""!-0````]'=W^V=G.F!!!71&amp;!!!Q!!!!%!!AFF=H*P=C"P&gt;81!%E!B$%^V&gt;#"P:C"397ZH:1!!%5!+!!J%1V^7&lt;WRU97&gt;F!!!M1(!!(A!!%R&amp;O;52$5'^X:8)O&lt;(:D&lt;'&amp;T=Q!/4EEN2%.1&lt;X&gt;F=C"P&gt;81!!!1!!!!\1"=!"15T)$%P-A5U)$%P-A5V)$%P-A5W)$%P-A5X)$%P-A!55G6T&lt;WRV&gt;'FP&lt;C"J&lt;C"%;7&gt;J&gt;(-!!#"!5!!$!!!!!1!#%W6S=G^S)'FO)#BO&lt;S"F=H*P=CE!#U!+!!6397ZH:1!,1!I!"5RF&gt;G6M!#J!=!!?!!!4%7ZJ2%.1&lt;X&gt;F=CZM&gt;G.M98.T!!V/33V%1V"P&gt;W6S)'FO!&amp;1!]!!-!!-!"!!&amp;!!9!"Q!(!!A!"Q!*!!I!#Q!-!Q!!?!!!$1A!!!E!!!!*!!!!D1M!!!!!!!!!!!!!#!!!!!!!!!!+!!!!#!!!!!A!!!#1!!!!!!%!$1!!!!!</Property>
 				<Property Name="NI.ClassItem.ExecutionSystem" Type="Int">-1</Property>
 				<Property Name="NI.ClassItem.Flags" Type="Int">0</Property>
 				<Property Name="NI.ClassItem.IsStaticMethod" Type="Bool">false</Property>
 				<Property Name="NI.ClassItem.MethodScope" Type="UInt">1</Property>
 				<Property Name="NI.ClassItem.Priority" Type="Int">1</Property>
-				<Property Name="NI.ClassItem.State" Type="Int">1082130960</Property>
-			</Item>
-			<Item Name="Measure_Voltage.vi" Type="VI" URL="../Methods/Measure Voltage/Measure_Voltage.vi">
-				<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">)1#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!'(!!!!$A!-1#%'=X2B&gt;(6T!!!,1!-!"'.P:'5!!""!-0````]'=W^V=G.F!!!71&amp;!!!Q!!!!%!!AFF=H*P=C"P&gt;81!%E!B$%^V&gt;#"P:C"397ZH:1!!%5!+!!J%1V^7&lt;WRU97&gt;F!!!M1(!!(A!!%R&amp;O;52$5'^X:8)O&lt;(:D&lt;'&amp;T=Q!/4EEN2%.1&lt;X&gt;F=C"P&gt;81!!!1!!!!\1"=!"15T)$%P-A5U)$%P-A5V)$%P-A5W)$%P-A5X)$%P-A!55G6T&lt;WRV&gt;'FP&lt;C"J&lt;C"%;7&gt;J&gt;(-!!#"!5!!$!!!!!1!#%W6S=G^S)'FO)#BO&lt;S"F=H*P=CE!#U!+!!6397ZH:1!,1!I!"5RF&gt;G6M!#J!=!!?!!!4%7ZJ2%.1&lt;X&gt;F=CZM&gt;G.M98.T!!V/33V%1V"P&gt;W6S)'FO!&amp;1!]!!-!!-!"!!&amp;!!9!"Q!(!!A!"Q!*!!I!#Q!-!Q!!?!!!$1A!!!E!!!!*!!!!D1M!!!!!!!!!!!!!#!!!!!!!!!!+!!!!#!!!!!A!!!#3!!!!!!%!$1!!!!!</Property>
-				<Property Name="NI.ClassItem.ExecutionSystem" Type="Int">-1</Property>
-				<Property Name="NI.ClassItem.Flags" Type="Int">33554432</Property>
-				<Property Name="NI.ClassItem.IsStaticMethod" Type="Bool">false</Property>
-				<Property Name="NI.ClassItem.MethodScope" Type="UInt">1</Property>
-				<Property Name="NI.ClassItem.Priority" Type="Int">1</Property>
-				<Property Name="NI.ClassItem.State" Type="Int">1342972432</Property>
+				<Property Name="NI.ClassItem.State" Type="Int">1115685392</Property>
 			</Item>
 			<Item Name="Check_In_Range.vi" Type="VI" URL="../Methods/Measure Voltage/Check_In_Range.vi">
 				<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">)1#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!&amp;&amp;!!!!#Q!-1#%'=X2B&gt;(6T!!!,1!-!"'.P:'5!!""!-0````]'=W^V=G.F!!!71&amp;!!!Q!!!!%!!AFF=H*P=C"P&gt;81!"!!!!"B!)2*O&lt;X1A;7YA9W^N='RJ97ZD:4]!!#"!5!!$!!!!!1!#%W6S=G^S)'FO)#BO&lt;S"F=H*P=CE!&amp;E!Q`````QRD;'&amp;O&lt;G6M)'ZB&lt;75!!"Y!.`````]!!S%!A!!!!!!"!!1!!!!"!!!!!!!!!$R!=!!0#7ZJ2%.1&lt;X&gt;F=A!"!!A!!#%!A!!!!!!"!!1!!!!"!!!!!!!!%7FO=X2S&gt;7VF&lt;H1A;'&amp;O:'RF!&amp;1!]!!-!!-!"!!%!!5!"!!%!!1!"!!'!!1!"Q!*!Q!!?!!!$1A!!!!!!!!!!!!!#1!!!!!!!!!!!!!!!!!!!!!!!!!+!!!!!!!!!!A!!!!)!!!!!!%!#A!!!!!</Property>

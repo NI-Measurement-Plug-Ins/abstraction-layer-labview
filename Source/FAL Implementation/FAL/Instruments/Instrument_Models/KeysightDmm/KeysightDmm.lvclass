@@ -41,9 +41,9 @@
 	</Item>
 	<Item Name="Methods" Type="Folder">
 		<Property Name="NI.SortType" Type="Int">3</Property>
-		<Item Name="Measure Voltage" Type="Folder">
-			<Item Name="Configure_Voltage.vi" Type="VI" URL="../Methods/Measure Voltage/Configure_Voltage.vi">
-				<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">)1#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!)@!!!!$!!-1#%'=X2B&gt;(6T!!!,1!-!"'.P:'5!!""!-0````]'=W^V=G.F!!!71&amp;!!!Q!!!!%!!AFF=H*P=C"P&gt;81!"!!!!#Z!=!!?!!!6%UNF?8.J:WBU2'VN,GRW9WRB=X-!$UNF?8.J:WBU2'VN)'^V&gt;!#T1"=!$1B%1S"7&lt;WRU=QB"1S"7&lt;WRU=QJ%1S"$&gt;8*S:7ZU#E&amp;$)%.V=H*F&lt;H12-CVX;8*F)&amp;*F=WFT&gt;'&amp;O9W52.#VX;8*F)&amp;*F=WFT&gt;'&amp;O9W5&amp;2'FP:'5*2H*F=86F&lt;G.Z"F"F=GFP:"."1S"7&lt;WRU=S"%1S"$&lt;X6Q&lt;'6E#U.B='&amp;D;82B&lt;G.F#EFO:(6D&gt;'&amp;O9W5,6'6N='6S982V=G5!%%VF98.V=G6N:7ZU)&amp;2Z='5!!#"!5!!$!!!!!1!#%W6S=G^S)'FO)#BO&lt;S"F=H*P=CE!/U!8!!5&amp;-S!R,T)&amp;.#!R,T)&amp;.3!R,T)&amp;.C!R,T)&amp;.S!R,T)!&amp;&amp;*F=W^M&gt;82J&lt;WYA;7YA2'FH;82T!!!,1!I!"6*B&lt;G&gt;F!#Z!=!!?!!!6%UNF?8.J:WBU2'VN,GRW9WRB=X-!$ENF?8.J:WBU2'VN)'FO!!"B!0!!$!!$!!1!"!!&amp;!!1!"!!'!!1!"Q!)!!E!#A-!!(A!!!U)!!!!!!!!!!!!!!U,!!!!!!!!!!!!!!A!!!!!!!!!#A!!!!A!!!!+!!!!#!!!$1!!!!Q!!!!!!!!!!!!!!1!,!!!!!!</Property>
+		<Item Name="Configure Voltage" Type="Folder">
+			<Item Name="Configure_Voltage_Range.vi" Type="VI" URL="../Methods/Measure Voltage/Configure_Voltage_Range.vi">
+				<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">)1#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!)@!!!!$!!-1#%'=X2B&gt;(6T!!!,1!-!"'.P:'5!!""!-0````]'=W^V=G.F!!!71&amp;!!!Q!!!!%!!AFF=H*P=C"P&gt;81!"!!!!#Z!=!!?!!!6%UNF?8.J:WBU2'VN,GRW9WRB=X-!$UNF?8.J:WBU2'VN)'^V&gt;!#T1"=!$1B%1S"7&lt;WRU=QB"1S"7&lt;WRU=QJ%1S"$&gt;8*S:7ZU#E&amp;$)%.V=H*F&lt;H12-CVX;8*F)&amp;*F=WFT&gt;'&amp;O9W52.#VX;8*F)&amp;*F=WFT&gt;'&amp;O9W5&amp;2'FP:'5*2H*F=86F&lt;G.Z"F"F=GFP:"."1S"7&lt;WRU=S"%1S"$&lt;X6Q&lt;'6E#U.B='&amp;D;82B&lt;G.F#EFO:(6D&gt;'&amp;O9W5,6'6N='6S982V=G5!%%VF98.V=G6N:7ZU)&amp;2Z='5!!#"!5!!$!!!!!1!#%W6S=G^S)'FO)#BO&lt;S"F=H*P=CE!/U!8!!5&amp;-S!R,T)&amp;.#!R,T)&amp;.3!R,T)&amp;.C!R,T)&amp;.S!R,T)!&amp;&amp;*F=W^M&gt;82J&lt;WYA;7YA2'FH;82T!!!,1!I!"6*B&lt;G&gt;F!#Z!=!!?!!!6%UNF?8.J:WBU2'VN,GRW9WRB=X-!$ENF?8.J:WBU2'VN)'FO!!"B!0!!$!!$!!1!"!!&amp;!!1!"!!'!!1!"Q!)!!E!#A-!!(A!!!U)!!!!!!!!!!!!!!U,!!!!!!!!!!!!!"!!!!!!!!!!#A!!!"!!!!!3!!!!%!!!$1!!!!Q!!!!!!!!!!!!!!1!,!!!!!!</Property>
 				<Property Name="NI.ClassItem.ExecutionSystem" Type="Int">-1</Property>
 				<Property Name="NI.ClassItem.Flags" Type="Int">0</Property>
 				<Property Name="NI.ClassItem.IsStaticMethod" Type="Bool">true</Property>
@@ -51,6 +51,8 @@
 				<Property Name="NI.ClassItem.Priority" Type="Int">1</Property>
 				<Property Name="NI.ClassItem.State" Type="Int">1342710288</Property>
 			</Item>
+		</Item>
+		<Item Name="Measure Voltage" Type="Folder">
 			<Item Name="Measure_Voltage.vi" Type="VI" URL="../Methods/Measure Voltage/Measure_Voltage.vi">
 				<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">)1#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!'.!!!!$A!-1#%'=X2B&gt;(6T!!!,1!-!"'.P:'5!!""!-0````]'=W^V=G.F!!!71&amp;!!!Q!!!!%!!AFF=H*P=C"P&gt;81!%E!B$%^V&gt;#"P:C"397ZH:1!!%5!+!!J%1V^7&lt;WRU97&gt;F!!!O1(!!(A!!&amp;2.,:8FT;7&gt;I&gt;%2N&lt;3ZM&gt;G.M98.T!!^,:8FT;7&gt;I&gt;%2N&lt;3"P&gt;81!"!!!!$N!&amp;Q!&amp;"4-A-3]S"41A-3]S"45A-3]S"49A-3]S"4=A-3]S!"23:8.P&lt;(6U;7^O)'FO)%2J:WFU=Q!!)%"1!!-!!!!"!!)4:8*S&lt;X)A;7YA+'ZP)'6S=G^S+1!,1!I!"6*B&lt;G&gt;F!!N!#A!&amp;4'6W:7Q!,E"Q!"Y!!"543W6Z=WFH;(2%&lt;7UO&lt;(:D&lt;'&amp;T=Q!/3W6Z=WFH;(2%&lt;7UA;7Y!!&amp;1!]!!-!!-!"!!&amp;!!9!"Q!(!!A!"Q!*!!I!#Q!-!Q!!?!!!$1A!!!E!!!!*!!!!D1M!!!!!!!!!!!!!#!!!!!!!!!!+!!!!#A!!!!A!!!#1!!!!!!%!$1!!!!!</Property>
 				<Property Name="NI.ClassItem.ExecutionSystem" Type="Int">-1</Property>
@@ -98,7 +100,7 @@
 				<Property Name="NI.ClassItem.Priority" Type="Int">1</Property>
 				<Property Name="NI.ClassItem.State" Type="Int">1082139136</Property>
 			</Item>
-			<Item Name="Close MeasurementLink Session.vi" Type="VI" URL="../Methods/Measure Voltage/Close MeasurementLink Session.vi">
+			<Item Name="Close MeasurementLink Session.vi" Type="VI" URL="../Methods/Session Methods/Close MeasurementLink Session.vi">
 				<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">)1#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!(G!!!!#A!-1#%'=X2B&gt;(6T!!!,1!-!"'.P:'5!!""!-0````]'=W^V=G.F!!!71&amp;!!!Q!!!!%!!AFF=H*P=C"P&gt;81!"!!!!":!5!!$!!!!!1!##'6S=G^S)'FO!!$R!0%!!!!!!!!!!S:/33"4:8.T;7^O)%VB&lt;G&amp;H:7VF&lt;H1A37ZT&gt;(*V&lt;76O&gt;#ZM&gt;GRJ9BB*5W6T=WFP&lt;C"'97.U&lt;X*Z,GRW9WRB=X-J37ZJ&gt;'FB&lt;'F[:3"B&lt;G1A1WRP=W5A5W6T=WFP&lt;C"#:7BB&gt;GFP=CZD&gt;'Q!@U!7!!1537ZJ&gt;'FB&lt;'F[:3"B&lt;G1A1WRP=W52182U97.I)'&amp;O:#"%:82B9WA637ZJ&gt;'FB&lt;'F[:3"B&lt;G1A2'6U97.I%%&amp;U&gt;'&amp;D;#"B&lt;G1A1WRP=W5!*7FO;82J97RJ?G5A97ZE)'.M&lt;X.F)(.F=X.J&lt;WYA9G6I98:J&lt;X)!%%"4#H.F=X.J&lt;WYA;7Y!!$*!=!!?!!!6%UNF?8.J:WBU2'VN,GRW9WRB=X-!%H.F=X.J&lt;WYA:G&amp;D&gt;'^S?3"J&lt;A!!6!$Q!!Q!!Q!%!!1!"!!%!!1!"!!%!!5!"A!(!!A$!!"Y!!!.#!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!I!!!!1!!!!%A!!!*!!!!!!!1!*!!!!!!</Property>
 				<Property Name="NI.ClassItem.ExecutionSystem" Type="Int">-1</Property>
 				<Property Name="NI.ClassItem.Flags" Type="Int">1073741824</Property>
