@@ -12,13 +12,13 @@
 </Property>
 	<Item Name="Methods" Type="Folder">
 		<Item Name="Measure_Voltage.vi" Type="VI" URL="../Methods/Measure_Voltage.vi">
-			<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">)1#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!'3!!!!$1!-1#%'=X2B&gt;(6T!!!,1!-!"'.P:'5!!""!-0````]'=W^V=G.F!!!71&amp;!!!Q!!!!%!!AFF=H*P=C"P&gt;81!%E!B$%^V&gt;#"P:C"397ZH:1!!%5!+!!J%1V^7&lt;WRU97&gt;F!!!W1(!!(A!!'2&gt;.:7&amp;T&gt;8*F8V:P&lt;(2B:W5O&lt;(:D&lt;'&amp;T=Q!4476B=X6S:6^7&lt;WRU97&gt;F)'^V&gt;!!%!!!!)%"1!!-!!!!"!!)4:8*S&lt;X)A;7YA+'ZP)'6S=G^S+1!\1"=!"15T)$%P-A5U)$%P-A5V)$%P-A5W)$%P-A5X)$%P-A!55G6T&lt;WRV&gt;'FP&lt;C"J&lt;C"%;7&gt;J&gt;(-!!!N!#A!&amp;5G&amp;O:W5!.E"Q!"Y!!"E8476B=X6S:6^7&lt;WRU97&gt;F,GRW9WRB=X-!%EVF98.V=G6@6G^M&gt;'&amp;H:3"J&lt;A!!6!$Q!!Q!!Q!%!!5!"A!(!!=!"Q!(!!A!#1!+!!M#!!"Y!!!.#!!!#1!!!!E!!!#.#Q!!!!!!!!!!!!!!!!!!!!!!!!A!!!!)!!!!#!!!!*!!!!!!!1!-!!!!!!</Property>
+			<Property Name="NI.ClassItem.ConnectorPane" Type="Bin">)1#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!'&gt;!!!!$A!-1#%'=X2B&gt;(6T!!!,1!-!"'.P:'5!!""!-0````]'=W^V=G.F!!!71&amp;!!!Q!!!!%!!AFF=H*P=C"P&gt;81!%E!B$%^V&gt;#"P:C"397ZH:1!!%5!+!!J%1V^7&lt;WRU97&gt;F!!!W1(!!(A!!'2&gt;.:7&amp;T&gt;8*F8V:P&lt;(2B:W5O&lt;(:D&lt;'&amp;T=Q!4476B=X6S:6^7&lt;WRU97&gt;F)'^V&gt;!!%!!!!/U!8!!5&amp;-S!R,T)&amp;.#!R,T)&amp;.3!R,T)&amp;.C!R,T)&amp;.S!R,T)!&amp;&amp;*F=W^M&gt;82J&lt;WYA;7YA2'FH;82T!!!A1&amp;!!!Q!!!!%!!B.F=H*P=C"J&lt;C!I&lt;G]A:8*S&lt;X)J!!N!#A!&amp;5G&amp;O:W5!#U!+!!6-:8:F&lt;!!W1(!!(A!!'2&gt;.:7&amp;T&gt;8*F8V:P&lt;(2B:W5O&lt;(:D&lt;'&amp;T=Q!3476B=X6S:6^7&lt;WRU97&gt;F)'FO!!"5!0!!$!!$!!1!"1!'!!=!"Q!)!!=!#1!+!!M!$!)!!(A!!!U)!!!*!!!!#1!!!)U,!!!!!!!!!!!!!!A!!!!!!!!!#!!!!!A!!!!)!!!!E!!!!!!"!!U!!!!!</Property>
 			<Property Name="NI.ClassItem.ExecutionSystem" Type="Int">-1</Property>
 			<Property Name="NI.ClassItem.Flags" Type="Int">0</Property>
 			<Property Name="NI.ClassItem.IsStaticMethod" Type="Bool">false</Property>
 			<Property Name="NI.ClassItem.MethodScope" Type="UInt">1</Property>
 			<Property Name="NI.ClassItem.Priority" Type="Int">1</Property>
-			<Property Name="NI.ClassItem.State" Type="Int">1082139136</Property>
+			<Property Name="NI.ClassItem.State" Type="Int">1342710272</Property>
 		</Item>
 	</Item>
 	<Item Name="Utility" Type="Folder">
