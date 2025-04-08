@@ -12,8 +12,8 @@ Hardware Abstraction Layer (HAL) enables users to develop software applications 
 
 ## Pre-requisites
 
-- Intermediate working experience in LabVIEW - Object-Oriented Programming (OOP).
-- Understanding of the session management in the measurement plug-ins.
+- Intermediate working experience in [LabVIEW - Object-Oriented Programming (OOP)](https://www.ni.com/en/support/documentation/supplemental/06/labview-object-oriented-programming--the-decisions-behind-the-de.html).
+- Understanding of the [session management](https://www.ni.com/docs/en-US/bundle/measurementplugins/page/session-management.html) in the measurement plug-ins.
 - Fundamental knowledge of HAL.
 
 ## Steps to create new HAL based measurement
@@ -65,6 +65,8 @@ Hardware Abstraction Layer (HAL) enables users to develop software applications 
     - ***Measurement APIs*** from the instrument base class that includes `Initialize`, `Configure` and the `Measure` for measuring the instrument.
     - ***Close Session*** and ***Unreserve Session*** for closing and unreserving the measurement plug-ins sessions.
     ![Measurement Logic](<HAL Images/Measurement Logic.png>)
+  
+![Block Diagram](<HAL Images/Block Diagram.png>)
 
 ## Migrate the existing instrument class to Measurement Plug-In
 
