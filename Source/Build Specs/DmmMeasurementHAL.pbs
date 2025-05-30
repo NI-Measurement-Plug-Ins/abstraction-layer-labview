@@ -51,13 +51,13 @@
         </SourceItem>
         <SourceItem z:Id="i10">
             <PluginConfigurationOptions />
-            <RelativePath>..\builds\DmmMeasurementHAL\DmmMeasurementHAL\Libraries\Win64\labview_grpc_server.dll</RelativePath>
+            <RelativePath>..\builds\DmmMeasurementHAL\DmmMeasurementHAL\Libraries\Win64\feature_config.ini</RelativePath>
             <DependentItems />
             <IsDiscoverable>true</IsDiscoverable>
         </SourceItem>
         <SourceItem z:Id="i11">
             <PluginConfigurationOptions />
-            <RelativePath>..\builds\DmmMeasurementHAL\DmmMeasurementHAL\niwebserver.conf</RelativePath>
+            <RelativePath>..\builds\DmmMeasurementHAL\DmmMeasurementHAL\Libraries\Win64\labview_grpc_server.dll</RelativePath>
             <DependentItems />
             <IsDiscoverable>true</IsDiscoverable>
         </SourceItem>
@@ -87,13 +87,13 @@
         </SourceItem>
         <SourceItem z:Id="i16">
             <PluginConfigurationOptions />
-            <RelativePath>..\builds\SourceMeasureDCVoltage\SourceMeasureDCVoltage\Libraries\Win64\labview_grpc_server.dll</RelativePath>
+            <RelativePath>..\builds\SourceMeasureDCVoltage\SourceMeasureDCVoltage\Libraries\Win64\feature_config.ini</RelativePath>
             <DependentItems />
             <IsDiscoverable>true</IsDiscoverable>
         </SourceItem>
         <SourceItem z:Id="i17">
             <PluginConfigurationOptions />
-            <RelativePath>..\builds\SourceMeasureDCVoltage\SourceMeasureDCVoltage\niwebserver.conf</RelativePath>
+            <RelativePath>..\builds\SourceMeasureDCVoltage\SourceMeasureDCVoltage\Libraries\Win64\labview_grpc_server.dll</RelativePath>
             <DependentItems />
             <IsDiscoverable>true</IsDiscoverable>
         </SourceItem>
@@ -155,21 +155,13 @@
         </SourceItem>
         <SourceItem z:Id="i26">
             <PluginConfigurationOptions />
-            <RelativePath>..\builds\DmmMeasurementHAL\DmmMeasurementHAL\Libraries\Win64</RelativePath>
-            <DependentItems>
-                <SourceItem z:Ref="i10" />
-            </DependentItems>
-            <IsDiscoverable>true</IsDiscoverable>
-        </SourceItem>
-        <SourceItem z:Id="i27">
-            <PluginConfigurationOptions />
             <RelativePath>..\builds\SourceMeasureDCVoltage\SourceMeasureDCVoltage\BuiltUI</RelativePath>
             <DependentItems>
                 <SourceItem z:Ref="i12" />
             </DependentItems>
             <IsDiscoverable>true</IsDiscoverable>
         </SourceItem>
-        <SourceItem z:Id="i28">
+        <SourceItem z:Id="i27">
             <PluginConfigurationOptions />
             <RelativePath>..\builds\SourceMeasureDCVoltage\SourceMeasureDCVoltage\Libraries\Linux</RelativePath>
             <DependentItems>
@@ -177,7 +169,7 @@
             </DependentItems>
             <IsDiscoverable>true</IsDiscoverable>
         </SourceItem>
-        <SourceItem z:Id="i29">
+        <SourceItem z:Id="i28">
             <PluginConfigurationOptions />
             <RelativePath>..\builds\SourceMeasureDCVoltage\SourceMeasureDCVoltage\Libraries\LinuxRT</RelativePath>
             <DependentItems>
@@ -185,7 +177,7 @@
             </DependentItems>
             <IsDiscoverable>true</IsDiscoverable>
         </SourceItem>
-        <SourceItem z:Id="i30">
+        <SourceItem z:Id="i29">
             <PluginConfigurationOptions />
             <RelativePath>..\builds\SourceMeasureDCVoltage\SourceMeasureDCVoltage\Libraries\Win32</RelativePath>
             <DependentItems>
@@ -193,10 +185,20 @@
             </DependentItems>
             <IsDiscoverable>true</IsDiscoverable>
         </SourceItem>
+        <SourceItem z:Id="i30">
+            <PluginConfigurationOptions />
+            <RelativePath>..\builds\DmmMeasurementHAL\DmmMeasurementHAL\Libraries\Win64</RelativePath>
+            <DependentItems>
+                <SourceItem z:Ref="i11" />
+                <SourceItem z:Ref="i10" />
+            </DependentItems>
+            <IsDiscoverable>true</IsDiscoverable>
+        </SourceItem>
         <SourceItem z:Id="i31">
             <PluginConfigurationOptions />
             <RelativePath>..\builds\SourceMeasureDCVoltage\SourceMeasureDCVoltage\Libraries\Win64</RelativePath>
             <DependentItems>
+                <SourceItem z:Ref="i17" />
                 <SourceItem z:Ref="i16" />
             </DependentItems>
             <IsDiscoverable>true</IsDiscoverable>
@@ -208,7 +210,7 @@
                 <SourceItem z:Ref="i23" />
                 <SourceItem z:Ref="i24" />
                 <SourceItem z:Ref="i25" />
-                <SourceItem z:Ref="i26" />
+                <SourceItem z:Ref="i30" />
             </DependentItems>
             <IsDiscoverable>true</IsDiscoverable>
         </SourceItem>
@@ -216,9 +218,9 @@
             <PluginConfigurationOptions />
             <RelativePath>..\builds\SourceMeasureDCVoltage\SourceMeasureDCVoltage\Libraries</RelativePath>
             <DependentItems>
+                <SourceItem z:Ref="i27" />
                 <SourceItem z:Ref="i28" />
                 <SourceItem z:Ref="i29" />
-                <SourceItem z:Ref="i30" />
                 <SourceItem z:Ref="i31" />
             </DependentItems>
             <IsDiscoverable>true</IsDiscoverable>
@@ -231,7 +233,6 @@
                 <SourceItem z:Ref="i4" />
                 <SourceItem z:Ref="i5" />
                 <SourceItem z:Ref="i6" />
-                <SourceItem z:Ref="i11" />
                 <SourceItem z:Ref="i22" />
                 <SourceItem z:Ref="i32" />
             </DependentItems>
@@ -241,12 +242,11 @@
             <PluginConfigurationOptions />
             <RelativePath>..\builds\SourceMeasureDCVoltage\SourceMeasureDCVoltage</RelativePath>
             <DependentItems>
-                <SourceItem z:Ref="i17" />
                 <SourceItem z:Ref="i18" />
                 <SourceItem z:Ref="i19" />
                 <SourceItem z:Ref="i20" />
                 <SourceItem z:Ref="i21" />
-                <SourceItem z:Ref="i27" />
+                <SourceItem z:Ref="i26" />
                 <SourceItem z:Ref="i33" />
             </DependentItems>
             <IsDiscoverable>true</IsDiscoverable>
@@ -308,120 +308,105 @@
                     <Name>DmmMeasurementHAL</Name>
                     <SourceItem i:nil="true" />
                 </DistributionItem>
-                <DistributionItem z:Id="i45" i:type="DistributionDirectoryItem">
-                    <DestinationRelativePath>[ProgramData]\National Instruments\Plug-Ins\Measurements\Abstraction Layer\DmmMeasurementHAL\DmmMeasurementHAL</DestinationRelativePath>
-                    <Name>DmmMeasurementHAL</Name>
-                    <SourceItem i:nil="true" />
-                </DistributionItem>
-                <DistributionItem z:Id="i46" i:type="DistributionFileItem">
+                <DistributionItem z:Id="i45" i:type="DistributionFileItem">
                     <DestinationRelativePath>[ProgramData]\National Instruments\Plug-Ins\Measurements\Abstraction Layer\DmmMeasurementHAL\DmmMeasurementHAL.aliases</DestinationRelativePath>
                     <Name>DmmMeasurementHAL.aliases</Name>
                     <SourceItem z:Ref="i3" />
                     <PluginConfigurationOptions />
                     <ProcessDuringStaging>true</ProcessDuringStaging>
                 </DistributionItem>
-                <DistributionItem z:Id="i47" i:type="DistributionFileItem">
+                <DistributionItem z:Id="i46" i:type="DistributionFileItem">
                     <DestinationRelativePath>[ProgramData]\National Instruments\Plug-Ins\Measurements\Abstraction Layer\DmmMeasurementHAL\DmmMeasurementHAL.exe</DestinationRelativePath>
                     <Name>DmmMeasurementHAL.exe</Name>
                     <SourceItem z:Ref="i4" />
                     <PluginConfigurationOptions />
                     <ProcessDuringStaging>true</ProcessDuringStaging>
                 </DistributionItem>
-                <DistributionItem z:Id="i48" i:type="DistributionFileItem">
+                <DistributionItem z:Id="i47" i:type="DistributionFileItem">
                     <DestinationRelativePath>[ProgramData]\National Instruments\Plug-Ins\Measurements\Abstraction Layer\DmmMeasurementHAL\DmmMeasurementHAL.ini</DestinationRelativePath>
                     <Name>DmmMeasurementHAL.ini</Name>
                     <SourceItem z:Ref="i5" />
                     <PluginConfigurationOptions />
                     <ProcessDuringStaging>true</ProcessDuringStaging>
                 </DistributionItem>
-                <DistributionItem z:Id="i49" i:type="DistributionFileItem">
+                <DistributionItem z:Id="i48" i:type="DistributionFileItem">
                     <DestinationRelativePath>[ProgramData]\National Instruments\Plug-Ins\Measurements\Abstraction Layer\DmmMeasurementHAL\DmmMeasurementHAL.serviceconfig</DestinationRelativePath>
                     <Name>DmmMeasurementHAL.serviceconfig</Name>
                     <SourceItem z:Ref="i6" />
                     <PluginConfigurationOptions />
                     <ProcessDuringStaging>true</ProcessDuringStaging>
                 </DistributionItem>
-                <DistributionItem z:Id="i50" i:type="DistributionFileItem">
-                    <DestinationRelativePath>[ProgramData]\National Instruments\Plug-Ins\Measurements\Abstraction Layer\DmmMeasurementHAL\niwebserver.conf</DestinationRelativePath>
-                    <Name>niwebserver.conf</Name>
-                    <SourceItem z:Ref="i11" />
-                    <PluginConfigurationOptions />
-                    <ProcessDuringStaging>true</ProcessDuringStaging>
-                </DistributionItem>
-                <DistributionItem z:Id="i51" i:type="DistributionDirectoryItem">
+                <DistributionItem z:Id="i49" i:type="DistributionDirectoryItem">
                     <DestinationRelativePath>[ProgramData]\National Instruments\Plug-Ins\Measurements\Abstraction Layer\DmmMeasurementHAL\BuiltUI</DestinationRelativePath>
                     <Name>BuiltUI</Name>
                     <SourceItem i:nil="true" />
                 </DistributionItem>
-                <DistributionItem z:Id="i52" i:type="DistributionFileItem">
+                <DistributionItem z:Id="i50" i:type="DistributionFileItem">
                     <DestinationRelativePath>[ProgramData]\National Instruments\Plug-Ins\Measurements\Abstraction Layer\DmmMeasurementHAL\BuiltUI\DmmMeasurementHAL UI.lvlibp</DestinationRelativePath>
                     <Name>DmmMeasurementHAL UI.lvlibp</Name>
                     <SourceItem z:Ref="i2" />
                     <PluginConfigurationOptions />
                     <ProcessDuringStaging>true</ProcessDuringStaging>
                 </DistributionItem>
-                <DistributionItem z:Id="i53" i:type="DistributionDirectoryItem">
+                <DistributionItem z:Id="i51" i:type="DistributionDirectoryItem">
                     <DestinationRelativePath>[ProgramData]\National Instruments\Plug-Ins\Measurements\Abstraction Layer\DmmMeasurementHAL\Libraries</DestinationRelativePath>
                     <Name>Libraries</Name>
                     <SourceItem i:nil="true" />
                 </DistributionItem>
-                <DistributionItem z:Id="i54" i:type="DistributionDirectoryItem">
+                <DistributionItem z:Id="i52" i:type="DistributionDirectoryItem">
                     <DestinationRelativePath>[ProgramData]\National Instruments\Plug-Ins\Measurements\Abstraction Layer\DmmMeasurementHAL\Libraries\Linux</DestinationRelativePath>
                     <Name>Linux</Name>
                     <SourceItem i:nil="true" />
                 </DistributionItem>
-                <DistributionItem z:Id="i55" i:type="DistributionFileItem">
+                <DistributionItem z:Id="i53" i:type="DistributionFileItem">
                     <DestinationRelativePath>[ProgramData]\National Instruments\Plug-Ins\Measurements\Abstraction Layer\DmmMeasurementHAL\Libraries\Linux\liblabview_grpc_server.so</DestinationRelativePath>
                     <Name>liblabview_grpc_server.so</Name>
                     <SourceItem z:Ref="i7" />
                     <PluginConfigurationOptions />
                     <ProcessDuringStaging>true</ProcessDuringStaging>
                 </DistributionItem>
-                <DistributionItem z:Id="i56" i:type="DistributionDirectoryItem">
+                <DistributionItem z:Id="i54" i:type="DistributionDirectoryItem">
                     <DestinationRelativePath>[ProgramData]\National Instruments\Plug-Ins\Measurements\Abstraction Layer\DmmMeasurementHAL\Libraries\LinuxRT</DestinationRelativePath>
                     <Name>LinuxRT</Name>
                     <SourceItem i:nil="true" />
                 </DistributionItem>
-                <DistributionItem z:Id="i57" i:type="DistributionFileItem">
+                <DistributionItem z:Id="i55" i:type="DistributionFileItem">
                     <DestinationRelativePath>[ProgramData]\National Instruments\Plug-Ins\Measurements\Abstraction Layer\DmmMeasurementHAL\Libraries\LinuxRT\liblabview_grpc_server.so</DestinationRelativePath>
                     <Name>liblabview_grpc_server.so</Name>
                     <SourceItem z:Ref="i8" />
                     <PluginConfigurationOptions />
                     <ProcessDuringStaging>true</ProcessDuringStaging>
                 </DistributionItem>
-                <DistributionItem z:Id="i58" i:type="DistributionDirectoryItem">
+                <DistributionItem z:Id="i56" i:type="DistributionDirectoryItem">
                     <DestinationRelativePath>[ProgramData]\National Instruments\Plug-Ins\Measurements\Abstraction Layer\DmmMeasurementHAL\Libraries\Win32</DestinationRelativePath>
                     <Name>Win32</Name>
                     <SourceItem i:nil="true" />
                 </DistributionItem>
-                <DistributionItem z:Id="i59" i:type="DistributionFileItem">
+                <DistributionItem z:Id="i57" i:type="DistributionFileItem">
                     <DestinationRelativePath>[ProgramData]\National Instruments\Plug-Ins\Measurements\Abstraction Layer\DmmMeasurementHAL\Libraries\Win32\labview_grpc_server.dll</DestinationRelativePath>
                     <Name>labview_grpc_server.dll</Name>
                     <SourceItem z:Ref="i9" />
                     <PluginConfigurationOptions />
                     <ProcessDuringStaging>true</ProcessDuringStaging>
                 </DistributionItem>
-                <DistributionItem z:Id="i60" i:type="DistributionDirectoryItem">
+                <DistributionItem z:Id="i58" i:type="DistributionDirectoryItem">
                     <DestinationRelativePath>[ProgramData]\National Instruments\Plug-Ins\Measurements\Abstraction Layer\DmmMeasurementHAL\Libraries\Win64</DestinationRelativePath>
                     <Name>Win64</Name>
                     <SourceItem i:nil="true" />
                 </DistributionItem>
-                <DistributionItem z:Id="i61" i:type="DistributionFileItem">
+                <DistributionItem z:Id="i59" i:type="DistributionFileItem">
                     <DestinationRelativePath>[ProgramData]\National Instruments\Plug-Ins\Measurements\Abstraction Layer\DmmMeasurementHAL\Libraries\Win64\labview_grpc_server.dll</DestinationRelativePath>
                     <Name>labview_grpc_server.dll</Name>
-                    <SourceItem z:Ref="i10" />
+                    <SourceItem z:Ref="i11" />
                     <PluginConfigurationOptions />
                     <ProcessDuringStaging>true</ProcessDuringStaging>
                 </DistributionItem>
-                <DistributionItem z:Id="i62" i:type="DistributionDirectoryItem">
-                    <DestinationRelativePath>[ProgramData]\National Instruments\Plug-Ins\Measurements\Abstraction Layer\KeysightDmm Simulation</DestinationRelativePath>
-                    <Name>KeysightDmm Simulation</Name>
-                    <SourceItem i:nil="true" />
-                </DistributionItem>
-                <DistributionItem z:Id="i63" i:type="DistributionDirectoryItem">
-                    <DestinationRelativePath>[ProgramData]\National Instruments\Plug-Ins\Measurements\Abstraction Layer\KeysightDmm Simulation\Configuration</DestinationRelativePath>
-                    <Name>Configuration</Name>
-                    <SourceItem i:nil="true" />
+                <DistributionItem z:Id="i60" i:type="DistributionFileItem">
+                    <DestinationRelativePath>[ProgramData]\National Instruments\Plug-Ins\Measurements\Abstraction Layer\DmmMeasurementHAL\Libraries\Win64\feature_config.ini</DestinationRelativePath>
+                    <Name>feature_config.ini</Name>
+                    <SourceItem z:Ref="i10" />
+                    <PluginConfigurationOptions />
+                    <ProcessDuringStaging>true</ProcessDuringStaging>
                 </DistributionItem>
             </DistributionItems>
             <Name>DMM Measurement (LabVIEW)</Name>
@@ -430,16 +415,16 @@
             <PrebuildAnalysisEnabled>true</PrebuildAnalysisEnabled>
             <Architecture>windows_x64</Architecture>
             <AutoIncrementVersion>Build</AutoIncrementVersion>
-            <BuildStatus z:Id="i64">
+            <BuildStatus z:Id="i61">
                 <BuildEverSuccessful>true</BuildEverSuccessful>
-                <FileName>dmm-measurement-hal-lv_1.0.0.1_windows_x64.nipkg</FileName>
-                <Version>1.0.0.1</Version>
+                <FileName>dmm-measurement-hal-lv_1.0.0.2_windows_x64.nipkg</FileName>
+                <Version>1.0.0.2</Version>
             </BuildStatus>
             <CompanyName>MyCompany</CompanyName>
             <CustomExecutes />
             <Description>Measurement plug-in example to perform a measurement using an DMM</Description>
             <DisplayName>DMM Measurement (LabVIEW)</DisplayName>
-            <FileName>dmm-measurement-hal-lv_1.0.0.2_windows_x64.nipkg</FileName>
+            <FileName>dmm-measurement-hal-lv_1.0.0.3_windows_x64.nipkg</FileName>
             <MaintainerEmail>email@mycompany.com</MaintainerEmail>
             <MaintainerName>National Instruments</MaintainerName>
             <Messages xmlns:d4p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
@@ -448,12 +433,12 @@
             <ProductName>MyProduct</ProductName>
             <Section>Add-Ons</Section>
             <Synopsis>HAL Plug-ins</Synopsis>
-            <Version>1.0.0.2</Version>
+            <Version>1.0.0.3</Version>
         </Distribution>
     </Distributions>
     <Feeds />
     <DistributionGroups>
-        <DistributionGroup z:Id="i65">
+        <DistributionGroup z:Id="i62">
             <Distributions>
                 <Distribution z:Ref="i39" />
             </Distributions>
@@ -464,59 +449,59 @@
     </DistributionGroups>
     <TestStandMode>true</TestStandMode>
     <PluginConfigurationOptions>
-        <ConfigurationOption z:Id="i66">
-            <Definition z:Id="i67">
+        <ConfigurationOption z:Id="i63">
+            <Definition z:Id="i64">
                 <Description i:nil="true" />
                 <Name>TestStand Options</Name>
             </Definition>
             <HasDefaultValues>true</HasDefaultValues>
-            <Value z:Id="i68" i:type="DialogConfigurationOptionValue">
+            <Value z:Id="i65" i:type="DialogConfigurationOptionValue">
                 <Values>
-                    <ConfigurationOptionValue z:Id="i69" i:type="BooleanConfigurationOptionValue" />
-                    <ConfigurationOptionValue z:Id="i70" i:type="BooleanConfigurationOptionValue" />
+                    <ConfigurationOptionValue z:Id="i66" i:type="BooleanConfigurationOptionValue" />
+                    <ConfigurationOptionValue z:Id="i67" i:type="BooleanConfigurationOptionValue" />
+                    <ConfigurationOptionValue z:Id="i68" i:type="BooleanConfigurationOptionValue" />
+                    <ConfigurationOptionValue z:Id="i69" i:type="StringConfigurationOptionValue">
+                        <Value />
+                    </ConfigurationOptionValue>
+                    <ConfigurationOptionValue z:Id="i70" i:type="StringConfigurationOptionValue">
+                        <Value>SupportVIs</Value>
+                    </ConfigurationOptionValue>
                     <ConfigurationOptionValue z:Id="i71" i:type="BooleanConfigurationOptionValue" />
                     <ConfigurationOptionValue z:Id="i72" i:type="StringConfigurationOptionValue">
                         <Value />
                     </ConfigurationOptionValue>
-                    <ConfigurationOptionValue z:Id="i73" i:type="StringConfigurationOptionValue">
-                        <Value>SupportVIs</Value>
-                    </ConfigurationOptionValue>
+                    <ConfigurationOptionValue z:Id="i73" i:type="BooleanConfigurationOptionValue" />
                     <ConfigurationOptionValue z:Id="i74" i:type="BooleanConfigurationOptionValue" />
-                    <ConfigurationOptionValue z:Id="i75" i:type="StringConfigurationOptionValue">
-                        <Value />
+                    <ConfigurationOptionValue z:Id="i75" i:type="BooleanConfigurationOptionValue" />
+                    <ConfigurationOptionValue z:Id="i76" i:type="BooleanConfigurationOptionValue">
+                        <Value>true</Value>
                     </ConfigurationOptionValue>
-                    <ConfigurationOptionValue z:Id="i76" i:type="BooleanConfigurationOptionValue" />
-                    <ConfigurationOptionValue z:Id="i77" i:type="BooleanConfigurationOptionValue" />
+                    <ConfigurationOptionValue z:Id="i77" i:type="BooleanConfigurationOptionValue">
+                        <Value>true</Value>
+                    </ConfigurationOptionValue>
                     <ConfigurationOptionValue z:Id="i78" i:type="BooleanConfigurationOptionValue" />
-                    <ConfigurationOptionValue z:Id="i79" i:type="BooleanConfigurationOptionValue">
-                        <Value>true</Value>
-                    </ConfigurationOptionValue>
-                    <ConfigurationOptionValue z:Id="i80" i:type="BooleanConfigurationOptionValue">
-                        <Value>true</Value>
+                    <ConfigurationOptionValue z:Id="i79" i:type="BooleanConfigurationOptionValue" />
+                    <ConfigurationOptionValue z:Id="i80" i:type="PathConfigurationOptionValue">
+                        <RelativePath />
                     </ConfigurationOptionValue>
                     <ConfigurationOptionValue z:Id="i81" i:type="BooleanConfigurationOptionValue" />
                     <ConfigurationOptionValue z:Id="i82" i:type="BooleanConfigurationOptionValue" />
-                    <ConfigurationOptionValue z:Id="i83" i:type="PathConfigurationOptionValue">
-                        <RelativePath />
-                    </ConfigurationOptionValue>
-                    <ConfigurationOptionValue z:Id="i84" i:type="BooleanConfigurationOptionValue" />
-                    <ConfigurationOptionValue z:Id="i85" i:type="BooleanConfigurationOptionValue" />
-                    <ConfigurationOptionValue z:Id="i86" i:type="StringConfigurationOptionValue">
+                    <ConfigurationOptionValue z:Id="i83" i:type="StringConfigurationOptionValue">
                         <Value>[BootVolume]</Value>
                     </ConfigurationOptionValue>
-                    <ConfigurationOptionValue z:Id="i87" i:type="StringConfigurationOptionValue">
+                    <ConfigurationOptionValue z:Id="i84" i:type="StringConfigurationOptionValue">
                         <Value />
                     </ConfigurationOptionValue>
-                    <ConfigurationOptionValue z:Id="i88" i:type="StringConfigurationOptionValue">
+                    <ConfigurationOptionValue z:Id="i85" i:type="StringConfigurationOptionValue">
                         <Value />
                     </ConfigurationOptionValue>
-                    <ConfigurationOptionValue z:Id="i89" i:type="StringConfigurationOptionValue">
+                    <ConfigurationOptionValue z:Id="i86" i:type="StringConfigurationOptionValue">
                         <Value />
                     </ConfigurationOptionValue>
+                    <ConfigurationOptionValue z:Id="i87" i:type="BooleanConfigurationOptionValue" />
+                    <ConfigurationOptionValue z:Id="i88" i:type="BooleanConfigurationOptionValue" />
+                    <ConfigurationOptionValue z:Id="i89" i:type="BooleanConfigurationOptionValue" />
                     <ConfigurationOptionValue z:Id="i90" i:type="BooleanConfigurationOptionValue" />
-                    <ConfigurationOptionValue z:Id="i91" i:type="BooleanConfigurationOptionValue" />
-                    <ConfigurationOptionValue z:Id="i92" i:type="BooleanConfigurationOptionValue" />
-                    <ConfigurationOptionValue z:Id="i93" i:type="BooleanConfigurationOptionValue" />
                 </Values>
             </Value>
         </ConfigurationOption>
