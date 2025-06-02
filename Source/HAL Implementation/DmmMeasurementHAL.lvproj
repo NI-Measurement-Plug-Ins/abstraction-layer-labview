@@ -159,7 +159,7 @@
 				<Property Name="Destination[1].destName" Type="Str">Support Directory</Property>
 				<Property Name="Destination[1].path" Type="Path">../builds/NI_AB_PROJECTNAME/DmmMeasurementHAL/data</Property>
 				<Property Name="DestinationCount" Type="Int">2</Property>
-				<Property Name="Source[0].itemID" Type="Str">{A4855117-C7F1-433E-B326-8909B652678D}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{2AFF1F0C-B81B-410A-8D0F-7A899B78D0DD}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].Container.applyInclusion" Type="Bool">true</Property>
 				<Property Name="Source[1].Container.depDestIndex" Type="Int">0</Property>
@@ -234,7 +234,7 @@
 				<Property Name="Destination[1].path.type" Type="Str">relativeToProject</Property>
 				<Property Name="DestinationCount" Type="Int">2</Property>
 				<Property Name="PackedLib_callersAdapt" Type="Bool">true</Property>
-				<Property Name="Source[0].itemID" Type="Str">{533A7B2C-66D4-4DCF-88FA-30DBB05CAB51}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{2AFF1F0C-B81B-410A-8D0F-7A899B78D0DD}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/My Computer/DmmMeasurementHAL UI.lvlib</Property>

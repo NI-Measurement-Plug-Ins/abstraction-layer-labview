@@ -199,7 +199,7 @@
 				<Property Name="Destination[1].destName" Type="Str">Support Directory</Property>
 				<Property Name="Destination[1].path" Type="Path">../builds/NI_AB_PROJECTNAME/SourceMeasureDCVoltage/data</Property>
 				<Property Name="DestinationCount" Type="Int">2</Property>
-				<Property Name="Source[0].itemID" Type="Str">{627BF2F4-1FC6-40DF-BA86-51CE9B863D81}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{9C469A1C-5738-45F6-B8A9-C3AE7CB109DE}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/My Computer/SourceMeasureDCVoltage.lvlib/Run Service.vi</Property>
@@ -268,7 +268,7 @@
 				<Property Name="Destination[1].path.type" Type="Str">relativeToProject</Property>
 				<Property Name="DestinationCount" Type="Int">2</Property>
 				<Property Name="PackedLib_callersAdapt" Type="Bool">true</Property>
-				<Property Name="Source[0].itemID" Type="Str">{627BF2F4-1FC6-40DF-BA86-51CE9B863D81}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{9C469A1C-5738-45F6-B8A9-C3AE7CB109DE}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/My Computer/SourceMeasureDCVoltage UI.lvlib</Property>
