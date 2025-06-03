@@ -18,8 +18,10 @@ Hardware Abstraction Layer (HAL) enables users to develop software applications 
 
 ## Steps to create new HAL based measurement
 
+![Block Diagram](<HAL Images/Block Diagram.png>)
+
 1. Create a measurement plug-in by following the steps mentioned in [Developing a measurement plug-in with LabVIEW](https://github.com/ni/measurement-plugin-labview?tab=readme-ov-file#developing-a-labview-measurement).
-2. Create a base class for a single instrument type and inherit from the `ISession Factory` interface.
+2. Create a base class for a single instrument type and add the `ISession Factory` interface located at `C:\Program Files\National Instruments\LabVIEW <version>\vi.lib\Plug-In SDKs\Sessions\Instrument\ISession Factory\ISession Factory.lvclass` as the parent interface for the base class.
     ![Session Factory Inheritance](<HAL Images/Session Factory Inheritance.png>)
 3. Implement the below dynamic dispatch methods in the instrument base class that includes:
     - Session methods:
@@ -31,8 +33,9 @@ Hardware Abstraction Layer (HAL) enables users to develop software applications 
       - ***Initialize*** - Initializes the instrument session.
       - ***Configure*** - Configures the input parameters for the selected instrument.
       - ***Measure*** - Takes measurement output from the instrument.
-4. Implement the VIs under [Utility](https://github.com/NI-Measurement-Plug-Ins/abstraction-layer-labview/tree/main/Source/HAL%20Implementation/HAL/Instruments/DMM_Base/Utility) in the instrument base class.
-5. Create child classes that inherits from the instrument base class and implement the overriding methods. The instrument child class name should match with the instrument type id in the pin map file and the directory name of the instrument child class. The directory names for different NI instrument types are:
+4. Add the methods found in the [Utility](https://github.com/NI-Measurement-Plug-Ins/abstraction-layer-labview/tree/main/Source/HAL%20Implementation/HAL/Instruments/DMM_Base/Utility) folder to your instrument base class and update the missing object constants/controls with your base class object.
+5. Create child classes that inherits from the instrument base class and implement the overriding methods.
+   1. **The instrument child class name should match with the instrument type id in the pin map file and the directory name of the instrument child class.** The directory names for different NI instrument types are:
 
    Instrument type | Directory name
    --- | ---
@@ -43,6 +46,7 @@ Hardware Abstraction Layer (HAL) enables users to develop software applications 
    NI-FGEN | niFGEN
    NI-DAQmx | niDAQmx
    NI-SWITCH | niRelayDriver
+
 6. For NI instruments, override the measurement methods of the instrument base class.
 7. For custom instruments, override both the session and measurement methods present in the instrument base class. The session methods for a Keysight DMM include:
     - ***Initialize MeasurementLink Session.vi*** - Creates a new session using the session initialization parameters. If the session represents a remote session, initialize and close session behavior determines whether creating the local session creates a new session on the server or attaches to an existing session on the server.
@@ -65,8 +69,6 @@ Hardware Abstraction Layer (HAL) enables users to develop software applications 
     - ***Measurement APIs*** from the instrument base class that includes `Initialize`, `Configure` and the `Measure` for measuring the instrument.
     - ***Close Session*** and ***Unreserve Session*** for closing and unreserving the measurement plug-ins sessions.
     ![Measurement Logic](<HAL Images/Measurement Logic.png>)
-  
-![Block Diagram](<HAL Images/Block Diagram.png>)
 
 ## Migrate the existing instrument class to Measurement Plug-In
 
