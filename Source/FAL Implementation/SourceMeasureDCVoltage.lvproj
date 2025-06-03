@@ -179,7 +179,6 @@
 				<Property Name="App_INI_GUID" Type="Str">{F8EDEC3C-97DD-4C66-98CD-E256FDBF36CB}</Property>
 				<Property Name="App_serverConfig.httpPort" Type="Int">8002</Property>
 				<Property Name="App_serverType" Type="Int">0</Property>
-				<Property Name="Bld_autoIncrement" Type="Bool">true</Property>
 				<Property Name="Bld_buildCacheID" Type="Str">{AB21D30B-2F6A-4D4B-9303-76F6839D11BF}</Property>
 				<Property Name="Bld_buildSpecName" Type="Str">SourceMeasureDCVoltage</Property>
 				<Property Name="Bld_excludeInlineSubVIs" Type="Bool">true</Property>
@@ -190,7 +189,7 @@
 				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
 				<Property Name="Bld_postActionVIID" Type="Ref">/My Computer/SourceMeasureDCVoltage.lvlib/Advanced/Build Assets/Post-Build Action.vi</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{FD0D62D3-1D78-4D61-8F55-178CFD62A2D5}</Property>
-				<Property Name="Bld_version.build" Type="Int">5</Property>
+				<Property Name="Bld_version.build" Type="Int">3</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">SourceMeasureDCVoltage.exe</Property>
 				<Property Name="Destination[0].path" Type="Path">../builds/NI_AB_PROJECTNAME/SourceMeasureDCVoltage/SourceMeasureDCVoltage.exe</Property>
@@ -199,7 +198,7 @@
 				<Property Name="Destination[1].destName" Type="Str">Support Directory</Property>
 				<Property Name="Destination[1].path" Type="Path">../builds/NI_AB_PROJECTNAME/SourceMeasureDCVoltage/data</Property>
 				<Property Name="DestinationCount" Type="Int">2</Property>
-				<Property Name="Source[0].itemID" Type="Str">{9C469A1C-5738-45F6-B8A9-C3AE7CB109DE}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{81A27A3D-134C-472E-927C-2759420A1D34}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/My Computer/SourceMeasureDCVoltage.lvlib/Run Service.vi</Property>
@@ -247,7 +246,6 @@
 				<Property Name="TgtF_versionIndependent" Type="Bool">true</Property>
 			</Item>
 			<Item Name="SourceMeasureDCVoltage UI" Type="Packed Library">
-				<Property Name="Bld_autoIncrement" Type="Bool">true</Property>
 				<Property Name="Bld_buildCacheID" Type="Str">{7AA4FFB4-9A8C-4966-AC4C-02DE37DEB2B5}</Property>
 				<Property Name="Bld_buildSpecName" Type="Str">SourceMeasureDCVoltage UI</Property>
 				<Property Name="Bld_excludeLibraryItems" Type="Bool">true</Property>
@@ -256,7 +254,7 @@
 				<Property Name="Bld_localDestDirType" Type="Str">relativeToProject</Property>
 				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{9FE35C0E-E2C6-4FFE-976B-5CD833259C30}</Property>
-				<Property Name="Bld_version.build" Type="Int">4</Property>
+				<Property Name="Bld_version.build" Type="Int">3</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">SourceMeasureDCVoltage UI.lvlibp</Property>
 				<Property Name="Destination[0].path" Type="Path">../NI_AB_PROJECTNAME/BuiltUI/SourceMeasureDCVoltage UI.lvlibp</Property>
@@ -268,7 +266,7 @@
 				<Property Name="Destination[1].path.type" Type="Str">relativeToProject</Property>
 				<Property Name="DestinationCount" Type="Int">2</Property>
 				<Property Name="PackedLib_callersAdapt" Type="Bool">true</Property>
-				<Property Name="Source[0].itemID" Type="Str">{9C469A1C-5738-45F6-B8A9-C3AE7CB109DE}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{81A27A3D-134C-472E-927C-2759420A1D34}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/My Computer/SourceMeasureDCVoltage UI.lvlib</Property>
