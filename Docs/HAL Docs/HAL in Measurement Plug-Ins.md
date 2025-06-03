@@ -21,34 +21,46 @@ Hardware Abstraction Layer (HAL) enables users to develop software applications 
 ![Block Diagram](<HAL Images/Block Diagram.png>)
 
 1. Create a measurement plug-in by following the steps mentioned in [Developing a measurement plug-in with LabVIEW](https://github.com/ni/measurement-plugin-labview?tab=readme-ov-file#developing-a-labview-measurement).
-2. Create a base class for a single instrument type and add the `ISession Factory` interface located at `C:\Program Files\National Instruments\LabVIEW <version>\vi.lib\Plug-In SDKs\Sessions\Instrument\ISession Factory\ISession Factory.lvclass` as the parent interface for the base class.
+2. Create base class for a specific instrument type (ex: DMM) with `LabVIEW Object` as the parent class and `NI Session Management Instrument:ISession Factory` interface located at `<vi.lib>\Plug-In SDKs\Sessions\Instrument\ISession Factory\ISession Factory.lvclass` as the parent interface of the base class.  
     ![Session Factory Inheritance](<HAL Images/Session Factory Inheritance.png>)
-3. Implement the below dynamic dispatch methods in the instrument base class that includes:
-    - Session methods:
+3. Right click on the base class and select `New` -> `VI for Override...`.
+   1. Create dynamic dispatch VIs for the required session methods of ISession Factory interface in the instrument base class that includes:
       - ***Initialize MeasurementLink Session.vi*** - Initializes the measurement plug-ins session for the instrument selected.
       - ***Get Instrument Type ID.vi*** - Gets the instrument type ID mentioned in the pin map file for the selected instrument.
       - ***Get Provided Interface and Service Class.vi*** - Returns the provided interface and service class that will be used to query the NI Discovery service for the address and port of the instrument's gRPC server.
       - ***Close MeasurementLink Session.vi*** - Closes the local measurement plug-ins session.
-    - Measurement methods:
+   2. In the `Get Instrument Type ID.vi` session method of the instrument base class, implement the logic to extract `instrument type id` from the class name of the provided `session factory in` object as shown below.
+        > [!NOTE]
+        > This logic is common for all child classes of a specific instrument type and does not need to be overridden in individual child classes.  
+        ![Get Instrument Type ID](<./HAL Images/Get Instrument Type ID.png>)
+4. Again, right click on the base class and select `New` -> `VI from Dynamic Dispatch Template`.
+   1. Create dynamic dispatch VIs for the required measurement methods.
       - ***Initialize*** - Initializes the instrument session.
       - ***Configure*** - Configures the input parameters for the selected instrument.
       - ***Measure*** - Takes measurement output from the instrument.
-4. Add the methods found in the [Utility](https://github.com/NI-Measurement-Plug-Ins/abstraction-layer-labview/tree/main/Source/HAL%20Implementation/HAL/Instruments/DMM_Base/Utility) folder to your instrument base class and update the missing object constants/controls with your base class object.
-5. Create child classes that inherits from the instrument base class and implement the overriding methods.
-   1. **The instrument child class name should match with the instrument type id in the pin map file and the directory name of the instrument child class.** The directory names for different NI instrument types are:
+    > [!NOTE]
+    > 1. The dynamic dispatch method for closing any instrument session is not implemented here because the `Close Sessions.vi` of the measurement plug-in will close all driver sessions that are reserved in the `Measurement Logic.vi`.  
+    > 2. Users can create additional measurement methods as needed. The methods mentioned above are provided as examples.
+5. Edit the base class cluster control elements to store the session reservation object of ISession Factory interface, pin name and the channel name as below.  
+    ![Base Class Private Data Control](<./HAL Images/Base Class Private Data Control.png>)
+6. Create accessors to read and write the private class data elements of the base class.
+7. Add the methods under [Utility](https://github.com/NI-Measurement-Plug-Ins/abstraction-layer-labview/tree/main/Source/HAL%20Implementation/HAL/Instruments/DMM_Base/Utility) folder to your instrument base class and update the missing object constants/controls with your base class object.
+8. Create child classes that inherit from the instrument base class and implement the overriding methods.
+   1. **The instrument child class name should match with the instrument type id in the pin map file and the directory name of the instrument child class.**
+   2. The directory names for different NI instrument types are:
 
-   Instrument type | Directory name
-   --- | ---
-   NI-DCPower | niDCPower
-   NI-DMM | niDMM
-   NI-Digital Pattern | niDigitalPattern
-   NI-SCOPE | niSCOPE
-   NI-FGEN | niFGEN
-   NI-DAQmx | niDAQmx
-   NI-SWITCH | niRelayDriver
+      Instrument type | Directory name
+      --- | ---
+      NI-DCPower | niDCPower
+      NI-DMM | niDMM
+      NI-Digital Pattern | niDigitalPattern
+      NI-SCOPE | niSCOPE
+      NI-FGEN | niFGEN
+      NI-DAQmx | niDAQmx
+      NI-SWITCH | niRelayDriver
 
-6. For NI instruments, override the measurement methods of the instrument base class.
-7. For custom instruments, override both the session and measurement methods present in the instrument base class. The session methods for a Keysight DMM include:
+9. For NI instruments, override the measurement methods of the instrument base class.
+10. For custom instruments, override both the session and measurement methods present in the instrument base class. The session methods for a Keysight DMM include:
     - ***Initialize MeasurementLink Session.vi*** - Creates a new session using the session initialization parameters. If the session represents a remote session, initialize and close session behavior determines whether creating the local session creates a new session on the server or attaches to an existing session on the server.
 
     ![Initialize MeasurementLink Session](<HAL Images/KeysightDmm Initialize MeasurementLink Session.png>)
@@ -61,9 +73,13 @@ Hardware Abstraction Layer (HAL) enables users to develop software applications 
 
     ![Close MeasurementLink Session](<HAL Images/KeysightDmm Close MeasurementLink Session.png>)
 
-8. Copy the VIs under [Reusables](https://github.com/NI-Measurement-Plug-Ins/abstraction-layer-labview/tree/main/Source/HAL%20Implementation/HAL/Reusables). Make sure to update the logic of `Get Instrument Path.vi` to get the path of the child class directory.
-9. Define the inputs and outputs in the measurement plug-ins and update the `Get Type Specialization.vi` to populate the pin information from pin map file.
-10. Update the Measurement logic with the below APIs:
+11. Copy the VIs under [Reusables](https://github.com/NI-Measurement-Plug-Ins/abstraction-layer-labview/tree/main/Source/HAL%20Implementation/HAL/Reusables) folder.
+    1. Update the base path in the `Get Instrument Path.vi` to specify the actual instrument type instead of `DMM_Models`. This VI is used to get the path to the child class directory by providing the `instrument_type_id` of the child class.  
+        ![Get Instrument Path](<./HAL Images/Get Instrument Path.png>)
+    > [!NOTE]
+    > The expected folder structure for any HAL-based measurement plug-in should have the Reusables folder parallel to the Instrument folder, which contains the instrument base and child classes.
+12. Define the inputs and outputs in the measurement plug-ins and update the `Get Type Specialization.vi` to populate the pin information from pin map file.
+13. Update the Measurement logic with the below APIs:
     - ***Reserve Session.vi*** - a polymorphic VI for reserving either a single pin or multiple pins together.
     - ***Get Pin Object.vi***, a polymorphic VI for getting the `session reservation` and getting either a single or an array of base class instrument objects from `pin or relay name(s)`.
     - ***Measurement APIs*** from the instrument base class that includes `Initialize`, `Configure` and the `Measure` for measuring the instrument.
