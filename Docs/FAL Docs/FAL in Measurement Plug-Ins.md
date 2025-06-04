@@ -18,6 +18,8 @@ The Functional Abstraction Layer (FAL) is a higher-level abstraction layer that 
 
 ## Steps to create new FAL based measurement
 
+![Block Diagram](<FAL Images/Block Diagram.png>)
+
 1. Create a measurement plug-in by following the steps mentioned in [Developing a measurement plug-in with LabVIEW](https://github.com/ni/measurement-plugin-labview?tab=readme-ov-file#developing-a-labview-measurement)
 2. Copy the `Abstract_Instrument` base class and its methods into the project. Ensure to inherit the Abstract_Instrument class from `ISession Factory` interface.
 3. Create function interface and implement the dynamic dispatch method for the required functionality.
@@ -34,6 +36,7 @@ The Functional Abstraction Layer (FAL) is a higher-level abstraction layer that 
    NI-FGEN | niFGEN
    NI-DAQmx | niDAQmx
    NI-SWITCH | niRelayDriver
+
 6. For NI instruments, override the **Initialize Session.vi** session method in the instrument child class.
 7. For custom instruments, override all the session methods present in `Abstract_Instrument` class. The session methods for a Keysight DMM include:
     - **Initialize Session.vi** - Initializes driver session for the instrument.
@@ -58,8 +61,6 @@ The Functional Abstraction Layer (FAL) is a higher-level abstraction layer that 
     - ***Function interface dynamic dispatch API*** for the instrument child class to override the function methods.
     - ***Close Session*** and ***Unreserve Session*** for closing and unreserving the measurement plug-ins sessions.
     ![Measurement Logic](<FAL Images/Measurement Logic.png>)
-    
-![Block Diagram](<FAL Images/Block Diagram.png>)
 
 ## Steps to migrate FAL implementations from other frameworks
 
