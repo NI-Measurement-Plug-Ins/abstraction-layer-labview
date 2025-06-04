@@ -77,7 +77,7 @@ Hardware Abstraction Layer (HAL) enables users to develop software applications 
     1. Update the base path in the `Get Instrument Path.vi` to specify the actual instrument type instead of `DMM_Models`. This VI is used to get the path to the child class directory by providing the `instrument_type_id` of the child class.  
         ![Get Instrument Path](<./HAL Images/Get Instrument Path.png>)
     > [!NOTE]
-    > The expected folder structure for any HAL-based measurement plug-in should have the Reusables folder parallel to the Instrument folder, which contains the instrument base and child classes.
+    > The expected folder structure for any HAL-based measurement plug-in should have the `Reusables` folder parallel to the `Instruments` folder, which contains the instrument base and child classes.
 12. Define the inputs and outputs in the measurement plug-ins and update the `Get Type Specialization.vi` to populate the pin information from pin map file.
 13. Update the Measurement logic with the below APIs:
     - ***Reserve Session.vi*** - a polymorphic VI for reserving either a single pin or multiple pins together.
@@ -89,4 +89,4 @@ Hardware Abstraction Layer (HAL) enables users to develop software applications 
 ## Migrate the existing instrument class to Measurement Plug-In
 
 1. Create a measurement plug-in by following the steps mentioned in [Developing a measurement plug-in with LabVIEW](https://github.com/ni/measurement-plugin-labview?tab=readme-ov-file#developing-a-labview-measurement)
-2. Copy the existing instrument classes to the project and follow from step 3-10 of [Steps to create new HAL based measurement](#steps-to-create-new-hal-based-measurement) for migrating the existing instrument classes to measurement plug-in.
+2. Copy the existing instrument classes to the project and follow from step 3-13 of [Steps to create new HAL based measurement](#steps-to-create-new-hal-based-measurement) for migrating the existing instrument classes to measurement plug-in.
