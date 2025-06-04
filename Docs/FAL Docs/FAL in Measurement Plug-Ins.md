@@ -20,11 +20,11 @@ The Functional Abstraction Layer (FAL) is a higher-level abstraction layer that 
 
 ![Block Diagram](<FAL Images/Block Diagram.png>)
 
-1. Create a measurement plug-in by following the steps mentioned in [Developing a measurement plug-in with LabVIEW](https://github.com/ni/measurement-plugin-labview?tab=readme-ov-file#developing-a-labview-measurement)
-2. Copy the [`Abstract_Instrument`](https://github.com/NI-Measurement-Plug-Ins/abstraction-layer-labview/tree/main/Source/FAL%20Implementation/FAL/Instruments/Abstract_Instrument) class along with its `Accessors`, `controls`, `Methods` and `Utility` files into the LabVIEW project containing the measurement plug-in. Ensure the `Abstract_Instrument` class inherits the `ISession Factory` interface located at `<vi.lib>\Plug-In SDKs\Sessions\Instrument\ISession Factory\ISession Factory.lvclass` as the parent interface.
-3. In the LabVIEW project, create interfaces for the required functionality (ex: Measure_Voltage.lvclass).
-4. Right click on the created interface and select `New` -> `VI from Dynamic Dispatch Template` to create dynamic dispatch VIs for the methods required to perform the function (ex: Measure_Voltage.vi).
+1. Create a measurement plug-in by following the steps mentioned in [Developing a measurement plug-in with LabVIEW](https://github.com/ni/measurement-plugin-labview?tab=readme-ov-file#developing-a-labview-measurement).
+2. Copy the [`Abstract_Instrument`](https://github.com/NI-Measurement-Plug-Ins/abstraction-layer-labview/tree/main/Source/FAL%20Implementation/FAL/Instruments/Abstract_Instrument) class along with its `Accessors`, `controls`, `Methods` and `Utility` folders into the LabVIEW project containing the measurement plug-in. Ensure the `Abstract_Instrument` class inherits the `ISession Factory` interface located at `<vi.lib>\Plug-In SDKs\Sessions\Instrument\ISession Factory\ISession Factory.lvclass` as the parent interface.
+3. In the LabVIEW project, create `Interfaces` for the required functionalities (e.g. Measure_Voltage.lvclass). These interfaces are referred to as `Function Interfaces`.  
     ![Base class and Function Interface](<FAL Images/Base and Function class.png>)
+4. Right-click on the created interface and select `New` -> `VI from Dynamic Dispatch Template` to create dynamic dispatch VIs required to perform the functionality of the interface (e.g. Measure_Voltage.vi).
 5. For all created function interfaces, implement the [Utility](https://github.com/NI-Measurement-Plug-Ins/abstraction-layer-labview/tree/main/Source/FAL%20Implementation/FAL/Functions/Measure_Voltage/Utility) functions. The `Utility` functions typecast the `Abstract_Instrument` class object into the required function interface object as shown.  
     ![Get 1 Object](<./FAL Images/Get 1 Object.png>)
 6. Create instrument child classes that inherit `Abstract_Instrument` class as the parent class and the required function interface(s) as the parent interface(s).
