@@ -59,7 +59,7 @@ The Functional Abstraction Layer (FAL) is a higher-level abstraction layer that 
 9. Copy the VIs under [Reusables](https://github.com/NI-Measurement-Plug-Ins/abstraction-layer-labview/tree/main/Source/FAL%20Implementation/FAL/Reusables) folder.
     1. Update the base path in the `Get Instrument Path.vi` to specify the actual name of the directory containing the child class folders instead of `Instrument_Models`. This VI is used to get the path to the child class directory by providing the `instrument_type_id` of the child class.  
         ![Get Instrument Path](<./FAL Images/Get Instrument Path.png>)
-    > **Note**  
+    > **Note:**  
     > The expected folder structure for any FAL-based measurement plug-in should have the `Reusables` folder parallel to the `Instruments` folder, which contains the instrument base and child classes.
 10. Define the inputs and outputs in the measurement plug-ins and update the `Get Type Specialization.vi` to populate the pin information from pin map file.
 11. Update the measurement logic with the below APIs:

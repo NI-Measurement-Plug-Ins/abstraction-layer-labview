@@ -27,16 +27,16 @@ Hardware Abstraction Layer (HAL) enables users to develop software applications 
       - ***Get Instrument Type ID.vi*** - Gets the instrument type ID mentioned in the pin map file for the selected instrument.
       - ***Get Provided Interface and Service Class.vi*** - Returns the provided interface and service class that will be used to query the NI Discovery service for the address and port of the instrument's gRPC server.
       - ***Close MeasurementLink Session.vi*** - Closes the local measurement plug-ins session.
-   2. In the `Get Instrument Type ID.vi` session method of the instrument base class, implement the logic to extract `instrument type id` from the class name of the provided `session factory in` object as shown below.
-        > [!NOTE]
-        > This logic is common for all child classes of a specific instrument type and does not need to be overridden in individual child classes.  
+   2. In the `Get Instrument Type ID.vi` session method of the instrument base class, implement the logic to extract `instrument type id` from the class name of the provided `session factory in` object as shown below.  
         ![Get Instrument Type ID](<./HAL Images/Get Instrument Type ID.png>)
+        > **Note:**  
+        > This logic is common for all child classes of a specific instrument type and does not need to be overridden in individual child classes.  
 4. Again, right click on the base class and select `New` -> `VI from Dynamic Dispatch Template`.
    1. Create dynamic dispatch VIs for the required measurement methods.
       - ***Initialize*** - Initializes the instrument session.
       - ***Configure*** - Configures the input parameters for the selected instrument.
       - ***Measure*** - Takes measurement output from the instrument.
-    > [!NOTE]
+    > **Note:**  
     > 1. The dynamic dispatch method for closing any instrument session is not implemented here because the `Close Sessions.vi` of the measurement plug-in will close all driver sessions that are reserved in the `Measurement Logic.vi`.  
     > 2. Users can create additional measurement methods as needed. The methods mentioned above are provided as examples.
 5. Edit the base class cluster control elements to store the session reservation object of ISession Factory interface, pin name and the channel name as below.  
@@ -74,7 +74,7 @@ Hardware Abstraction Layer (HAL) enables users to develop software applications 
 11. Copy the VIs under [Reusables](https://github.com/NI-Measurement-Plug-Ins/abstraction-layer-labview/tree/main/Source/HAL%20Implementation/HAL/Reusables) folder.
     1. Update the base path in the `Get Instrument Path.vi` to specify the actual instrument type instead of `DMM_Models`. This VI is used to get the path to the child class directory by providing the `instrument_type_id` of the child class.  
         ![Get Instrument Path](<./HAL Images/Get Instrument Path.png>)
-    > [!NOTE]
+    > **Note:**  
     > The expected folder structure for any HAL-based measurement plug-in should have the `Reusables` folder parallel to the `Instruments` folder, which contains the instrument base and child classes.
 12. Define the inputs and outputs in the measurement plug-ins and update the `Get Type Specialization.vi` to populate the pin information from pin map file.
 13. Update the Measurement logic with the below APIs:
