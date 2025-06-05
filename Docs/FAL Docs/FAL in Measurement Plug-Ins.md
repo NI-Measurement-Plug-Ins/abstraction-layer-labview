@@ -26,7 +26,7 @@ The Functional Abstraction Layer (FAL) is a higher-level abstraction layer that 
 4. Right-click on the created interface and select `New` -> `VI from Dynamic Dispatch Template` to create dynamic dispatch VIs required to perform the functionality of the interface (e.g. Measure_Voltage.vi).
 5. For all created function interfaces, implement the [Utility](https://github.com/NI-Measurement-Plug-Ins/abstraction-layer-labview/tree/main/Source/FAL%20Implementation/FAL/Functions/Measure_Voltage/Utility) functions. The `Utility` functions typecast the `Abstract_Instrument` class object into the required function interface object as shown.  
     ![Get 1 Object](<./FAL Images/Get 1 Object.png>)
-6. Create instrument child classes that inherit the `Abstract_Instrument` class as the parent class and the required function interface(s) as the parent interface(s).
+6. Create instrument child classes that inherit the `Abstract_Instrument` class as the parent class and the required function interface(s) as the parent interface(s) as shown below.
    1. **The instrument child class name should match with the `instrument type id` in the pin map file and the directory name of the instrument child class.**
    2. The directory names for different NI instrument types are:
 
