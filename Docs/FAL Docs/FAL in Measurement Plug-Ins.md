@@ -53,14 +53,13 @@ The Functional Abstraction Layer (FAL) is a higher-level abstraction layer that 
     - ***Close MeasurmentLink Session.vi*** - Closes the local session. If the session represents a remote session, initialize and close session behavior determines whether closing the local session closes the server session or detaches from the server session.
 
         ![Close MeasurementLink Session](<FAL Images/KeysightDmm Close MeasurementLink Session.png>)
-
-   > [!NOTE]
-   > The function methods can vary based on the required functionality and hence, users can have their own function methods defined for both the function interfaces and child classes respectively.
+    > **Note:**  
+    > The function methods can vary based on the required functionality and hence, users can have their own function methods defined for both the function interfaces and child classes respectively.
 
 9. Copy the VIs under [Reusables](https://github.com/NI-Measurement-Plug-Ins/abstraction-layer-labview/tree/main/Source/FAL%20Implementation/FAL/Reusables) folder.
     1. Update the base path in the `Get Instrument Path.vi` to specify the actual name of the directory containing the child class folders instead of `Instrument_Models`. This VI is used to get the path to the child class directory by providing the `instrument_type_id` of the child class.  
         ![Get Instrument Path](<./FAL Images/Get Instrument Path.png>)
-    > [!NOTE]
+    > **Note**  
     > The expected folder structure for any FAL-based measurement plug-in should have the `Reusables` folder parallel to the `Instruments` folder, which contains the instrument base and child classes.
 10. Define the inputs and outputs in the measurement plug-ins and update the `Get Type Specialization.vi` to populate the pin information from pin map file.
 11. Update the measurement logic with the below APIs:
