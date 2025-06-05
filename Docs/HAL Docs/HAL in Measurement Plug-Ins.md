@@ -18,8 +18,6 @@ Hardware Abstraction Layer (HAL) enables users to develop software applications 
 
 ## Steps to create new HAL based measurement
 
-![Block Diagram](<HAL Images/Block Diagram.png>)
-
 1. Create a measurement plug-in by following the steps mentioned in [Developing a measurement plug-in with LabVIEW](https://github.com/ni/measurement-plugin-labview?tab=readme-ov-file#developing-a-labview-measurement).
 2. Create base class for a specific instrument type (ex: DMM) with `LabVIEW Object` as the parent class and `NI Session Management Instrument:ISession Factory` interface located at `<vi.lib>\Plug-In SDKs\Sessions\Instrument\ISession Factory\ISession Factory.lvclass` as the parent interface of the base class.  
     ![Session Factory Inheritance](<HAL Images/Session Factory Inheritance.png>)
