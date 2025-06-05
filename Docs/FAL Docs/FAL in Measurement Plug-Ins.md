@@ -12,9 +12,9 @@ The Functional Abstraction Layer (FAL) is a higher-level abstraction layer that 
 
 ## Pre-requisites
 
-- Intermediate working experience in [LabVIEW - Object-Oriented Programming (OOP)](https://www.ni.com/en/support/documentation/supplemental/06/labview-object-oriented-programming--the-decisions-behind-the-de.html).
+- Intermediate-level expertise in [LabVIEW - Object-Oriented Programming (OOP)](https://www.ni.com/en/support/documentation/supplemental/06/labview-object-oriented-programming--the-decisions-behind-the-de.html).
 - Understanding of the [session management](https://www.ni.com/docs/en-US/bundle/measurementplugins/page/session-management.html) in the measurement plug-ins.
-- Fundamental knowledge of FAL.
+- Fundamentals of FAL.
 
 ## Steps to create new FAL based measurement
 
