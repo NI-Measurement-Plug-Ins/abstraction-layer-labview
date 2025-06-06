@@ -151,6 +151,6 @@ Example:
 ## Steps to migrate FAL implementations from other frameworks
 
 1. Create a measurement plug-in by following the steps mentioned in the [Developing a measurement plug-in with LabVIEW](https://github.com/ni/measurement-plugin-labview?tab=readme-ov-file#developing-a-labview-measurement) guide.
-2. Add your existing FAL classes to the LabVIEW project that contains the created measurement plug-in.
-3. Update the abstract instrument base class of your instrument classes to inherit from the **ISession Factory** interface, located at `<vi.lib>\Plug-In SDKs\Sessions\Instrument\ISession Factory\ISession Factory.lvclass`.
-4. Follow steps 3-9 of [Steps to create new FAL based measurement](#steps-to-create-new-fal-based-measurement) for migrating your existing FAL implementations to a measurement plug-in compatible, class-based FAL.
+2. Add the existing FAL implementation to the LabVIEW project that contains the created measurement plug-in.
+3. Update the abstract instrument base class of the existing FAL implementation to inherit the **ISession Factory** interface located at `<vi.lib>\Plug-In SDKs\Sessions\Instrument\ISession Factory\ISession Factory.lvclass` as parent interface.
+4. Follow steps 3-9 of [Steps to create new FAL based measurement](#steps-to-create-new-fal-based-measurement) to migrate your existing FAL implementation to a measurement plug-in compatible, class-based FAL.
