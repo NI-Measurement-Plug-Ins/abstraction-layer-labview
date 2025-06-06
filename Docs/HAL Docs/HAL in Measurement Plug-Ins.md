@@ -76,8 +76,8 @@ Hardware Abstraction Layer (HAL) enables users to develop software applications 
 
 10. **Create instrument child classes**  
     1. In `<instrument type>_Models` folder, create child classes that inherit from the instrument base class, as shown in the class hierarchy image below. Refer to this [example](https://github.com/NI-Measurement-Plug-Ins/abstraction-layer-labview/tree/main/Source/HAL%20Implementation) for more information.
-    2. **The name of each child class and its directory must match the instrument type ID configured for that instrument model in the pin map file.**
-    3. Below are the standard directory names followed for NI instruments:
+    2. **The name of the instrument child class and its directory should match the instrument type ID configured in the pin map file.**
+    3. Below are the directory names for different NI instrument types:
 
        | Instrument type       | Directory name    |
        |-----------------------|-------------------|
@@ -160,6 +160,6 @@ Example:
 ## Migrate the existing instrument class to Measurement Plug-In
 
 1. Create a measurement plug-in by following the steps mentioned in the [Developing a measurement plug-in with LabVIEW](https://github.com/ni/measurement-plugin-labview?tab=readme-ov-file#developing-a-labview-measurement) guide.
-2. Add your existing instrument class to the LabVIEW project that contains the created measurement plug-in.
-3. Update your instrument base class to inherit the **ISession Factory** interface, located at `<vi.lib>\Plug-In SDKs\Sessions\Instrument\ISession Factory\ISession Factory.lvclass`.
-4. Follow steps 4-12 of [Steps to create new HAL based measurement](#steps-to-create-new-hal-based-measurement) for migrating your existing instrument class-based HAL to measurement plug-in compatible, class-based HAL.
+2. Add the instrument classes from the existing HAL implementation to the LabVIEW project that contains the created measurement plug-in.
+3. Update the instrument base class to inherit the **ISession Factory** interface located at `<vi.lib>\Plug-In SDKs\Sessions\Instrument\ISession Factory\ISession Factory.lvclass`.
+4. Follow steps 4-12 of [Steps to create new HAL based measurement](#steps-to-create-new-hal-based-measurement) to migrate the existing HAL implementation to measurement plug-in.
