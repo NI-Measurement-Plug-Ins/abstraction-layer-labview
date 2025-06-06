@@ -18,11 +18,9 @@ The Functional Abstraction Layer (FAL) is a higher-level abstraction layer that 
 
 ## Steps to create new FAL based measurement
 
-1. **Create a measurement plug-in**  
-    Follow the steps in [Developing a measurement plug-in with LabVIEW](https://github.com/ni/measurement-plugin-labview?tab=readme-ov-file#developing-a-labview-measurement) to create a measurement plug-in.
+1. Create a measurement plug-in by following the steps mentioned in the [Developing a measurement plug-in with LabVIEW](https://github.com/ni/measurement-plugin-labview?tab=readme-ov-file#developing-a-labview-measurement) guide.
 
-2. **Follow the recommended directory structure**  
-    Ensure to follow a clean directory structure as shown in the image below. This structure helps to efficiently organize the files related to the FAL implementation.
+2. Ensure to follow the recommended directory structure for FAL shown below, to efficiently organize the files related to the FAL implementation.
 
     ``` bash
 
@@ -93,11 +91,9 @@ The Functional Abstraction Layer (FAL) is a higher-level abstraction layer that 
 
    ![Base class and Function Interface](<FAL Images/Base and Function class.png>)
 
-5. **Create dynamic dispatch methods for interfaces**  
-    Right-click each created interface and select `New` → `VI from Dynamic Dispatch Template` to create the necessary dynamic dispatch VIs that implement the required functionality for the interface (for example, `Measure_Voltage.vi`).
+5. Right-click each created interface and select `New` → `VI from Dynamic Dispatch Template` to create the necessary dynamic dispatch VIs that implement the required functionality for the interface (for example, `Measure_Voltage.vi`).
 
-6. **Implement utility VIs for interfaces**  
-    For each function interface, implement [Utility](https://github.com/NI-Measurement-Plug-Ins/abstraction-layer-labview/tree/main/Source/FAL%20Implementation/FAL/Functions/Measure_Voltage/Utility) VIs that typecast the `Abstract_Instrument` object to the corresponding function interface object as shown below:
+6. For each function interface, implement [Utility](https://github.com/NI-Measurement-Plug-Ins/abstraction-layer-labview/tree/main/Source/FAL%20Implementation/FAL/Functions/Measure_Voltage/Utility) VIs that typecast the `Abstract_Instrument` object to the corresponding function interface object as shown below:
 
     ![Get 1 Object](<./FAL Images/Get 1 Object.png>)
 

@@ -18,11 +18,9 @@ Hardware Abstraction Layer (HAL) enables users to develop software applications 
 
 ## Steps to create new HAL based measurement
 
-1. **Create a measurement plug-in**  
-   Follow the steps mentioned in [Developing a measurement plug-in with LabVIEW](https://github.com/ni/measurement-plugin-labview?tab=readme-ov-file#developing-a-labview-measurement) guide and create a measurement plug-in.
+1. Create a measurement plug-in by following the steps mentioned in the [Developing a measurement plug-in with LabVIEW](https://github.com/ni/measurement-plugin-labview?tab=readme-ov-file#developing-a-labview-measurement) guide.
 
-2. **Follow the recommended directory structure**  
-   Ensure to follow a clean directory structure as shown below. This structure helps to efficiently organize the files related to the HAL implementation.
+2. Ensure to follow the recommended directory structure for HAL shown below, to efficiently organize the files related to the HAL implementation.
 
    ``` bash
 
@@ -61,8 +59,7 @@ Hardware Abstraction Layer (HAL) enables users to develop software applications 
 
    ![Recommended Directory Structure](<./HAL Images/Directory Structure.png>)
 
-3. **Create the instrument base class**  
-   In `<instrument type>_Base` folder, create a base class for your instrument type that inherits from **LabVIEW Object** and **ISession Factory** interface (located at `<vi.lib>\Plug-In SDKs\Sessions\Instrument\ISession Factory\ISession Factory.lvclass`).
+3. In `<instrument type>_Base` folder, create a base class for your instrument type that inherits from **LabVIEW Object** and **ISession Factory** interface (located at `<vi.lib>\Plug-In SDKs\Sessions\Instrument\ISession Factory\ISession Factory.lvclass`).
 
 4. **Override ISession Factory methods**  
    1. Right-click the base class and select `New` -> `VI for Override...`.
@@ -96,8 +93,7 @@ Hardware Abstraction Layer (HAL) enables users to develop software applications 
 
    ![Base Class Private Data Control](<./HAL Images/Base Class Private Data Control.png>)
 
-7. **Create accessors for the elements of the private data cluster control**  
-   Create accessor VIs to read and write elements of the private data cluster control and save them in the `Accessors` folder.
+7. Create accessor VIs to read and write elements of the private data cluster control and save them in the `Accessors` folder.
 
 8. **Copy Reusables**  
    1. Copy the [Reusables](https://github.com/NI-Measurement-Plug-Ins/abstraction-layer-labview/tree/main/Source/HAL%20Implementation/HAL/Reusables) folder and place it parallel to the `Instruments` folder, preserving its contents.
