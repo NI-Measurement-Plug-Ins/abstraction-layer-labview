@@ -21,7 +21,7 @@ Hardware Abstraction Layer (HAL) enables users to develop software applications 
 
 1. Create a measurement plug-in by following the steps mentioned in the [Developing a measurement plug-in with LabVIEW](https://github.com/ni/measurement-plugin-labview?tab=readme-ov-file#developing-a-labview-measurement) guide.
 
-2. Ensure to follow the recommended [directory structure for HAL](#directory-structure-of-hal) to efficiently organize the files related to the HAL implementation.
+2. Ensure to follow the recommended [directory structure of HAL](#directory-structure-of-hal) to efficiently organize the files related to the HAL implementation.
 
 3. In `<instrument type>_Base` folder, create a base class for your instrument type that inherits the **ISession Factory** interface located at `<vi.lib>\Plug-In SDKs\Sessions\Instrument\ISession Factory\ISession Factory.lvclass` as parent interface.
 
@@ -118,7 +118,7 @@ Hardware Abstraction Layer (HAL) enables users to develop software applications 
 
 ## Directory structure of HAL
 
-The recommended directory structure for HAL is shown below:
+The recommended directory structure of HAL is shown below:
 
 ``` bash
 
