@@ -22,7 +22,7 @@ Hardware Abstraction Layer (HAL) enables users to develop software applications 
    Follow the steps mentioned in [Developing a measurement plug-in with LabVIEW](https://github.com/ni/measurement-plugin-labview?tab=readme-ov-file#developing-a-labview-measurement) guide and create a measurement plug-in.
 
 2. **Follow the recommended directory structure**  
-   Ensure to follow a clean directory structure as shown below. This structure helps to efficiently organize the files related to the HAL implementation.
+   Ensure to follow the recommended directory structure for HAL shown below. This structure helps to efficiently organize the files related to the HAL implementation.
 
    ``` bash
 
