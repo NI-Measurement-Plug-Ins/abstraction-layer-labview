@@ -4,6 +4,7 @@
   - [What is FAL?](#what-is-fal)
   - [Pre-requisites](#pre-requisites)
   - [Steps to create new FAL based measurement](#steps-to-create-new-fal-based-measurement)
+  - [Directory structure of FAL](#directory-structure-of-fal)
   - [Steps to migrate FAL implementations from other frameworks](#steps-to-migrate-fal-implementations-from-other-frameworks)
 
 ## What is FAL?
@@ -20,59 +21,7 @@ The Functional Abstraction Layer (FAL) is a higher-level abstraction layer that 
 
 1. Create a measurement plug-in by following the steps mentioned in the [Developing a measurement plug-in with LabVIEW](https://github.com/ni/measurement-plugin-labview?tab=readme-ov-file#developing-a-labview-measurement) guide.
 
-2. Ensure to follow the recommended directory structure for FAL shown below, to efficiently organize the files related to the FAL implementation.
-
-    ``` bash
-
-    <fal_root_directory>
-        ├───Functions
-        │   ├───<function_1>
-        │   │   ├───Methods
-        │   │   └───Utility
-        │   ├───<function_2>
-        │   │    ├───Methods
-        │   │    └───Utility
-        │   .
-        │   .
-        │   .
-        │   └───<function_n>
-        │        ├───Methods
-        │        └───Utility
-        ├───Instruments
-        │   ├───Abstract_Instrument
-        │   │   ├───Accessors
-        │   │   ├───controls
-        │   │   ├───Methods
-        │   │   └───Utility
-        │   └───Instrument_Models
-        │       ├───<instrument_model_1>
-        │       │   ├───controls
-        │       │   ├───Methods
-        │       │   │   ├───<function_1>
-        │       │   │   ├───<function_2>
-        │       │   │   └───Session Methods
-        │       │   └───subVIs
-        │       ├───<instrument_model_2>
-        │       │   ├───controls
-        │       │   └───Methods
-        │       │       ├───<function_1>
-        │       │       └───Session Methods
-        │       .
-        │       .
-        │       .
-        │       └───<instrument_model_n>
-        │           ├───controls
-        │           └───Methods
-        │               ├───<function_1>
-        │               ├───<function_2>
-        │               └───Session Methods
-        └───Reusables
-        
-    ```
-
-   **Example:**
-
-    ![Recommended Directory Structure](<./FAL Images/Directory Structure.png>)
+2. Ensure to follow the recommended [directory structure for FAL](#directory-structure-of-fal) to efficiently organize the files related to the FAL implementation.
 
 3. **Copy the Abstract_Instrument class and Reusables**  
    1. Copy the [`Abstract_Instrument`](https://github.com/NI-Measurement-Plug-Ins/abstraction-layer-labview/tree/main/Source/FAL%20Implementation/FAL/Instruments/Abstract_Instrument) folder into the `Instruments` directory, and the [`Reusables`](https://github.com/NI-Measurement-Plug-Ins/abstraction-layer-labview/tree/main/Source/FAL%20Implementation/FAL/Reusables) folder parallel to the `Instruments` directory. Make sure to preserve all contents of both folders.
@@ -142,6 +91,62 @@ The Functional Abstraction Layer (FAL) is a higher-level abstraction layer that 
         - **Close Session** and **Unreserve Session** – Close and unreserve all instrument sessions created with the session reservation object.
 
     ![Measurement Logic](<FAL Images/Measurement Logic.png>)
+
+## Directory structure of FAL
+
+The recommended directory structure for FAL is shown below:
+
+``` bash
+
+<fal_root_directory>
+    ├───Functions
+    │   ├───<function_1>
+    │   │   ├───Methods
+    │   │   └───Utility
+    │   ├───<function_2>
+    │   │    ├───Methods
+    │   │    └───Utility
+    │   .
+    │   .
+    │   .
+    │   └───<function_n>
+    │        ├───Methods
+    │        └───Utility
+    ├───Instruments
+    │   ├───Abstract_Instrument
+    │   │   ├───Accessors
+    │   │   ├───controls
+    │   │   ├───Methods
+    │   │   └───Utility
+    │   └───Instrument_Models
+    │       ├───<instrument_model_1>
+    │       │   ├───controls
+    │       │   ├───Methods
+    │       │   │   ├───<function_1>
+    │       │   │   ├───<function_2>
+    │       │   │   └───Session Methods
+    │       │   └───subVIs
+    │       ├───<instrument_model_2>
+    │       │   ├───controls
+    │       │   └───Methods
+    │       │       ├───<function_1>
+    │       │       └───Session Methods
+    │       .
+    │       .
+    │       .
+    │       └───<instrument_model_n>
+    │           ├───controls
+    │           └───Methods
+    │               ├───<function_1>
+    │               ├───<function_2>
+    │               └───Session Methods
+    └───Reusables
+    
+```
+
+Example:
+
+![Recommended Directory Structure](<./FAL Images/Directory Structure.png>)
 
 ## Steps to migrate FAL implementations from other frameworks
 

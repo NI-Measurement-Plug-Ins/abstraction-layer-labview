@@ -4,6 +4,7 @@
   - [What is HAL?](#what-is-hal)
   - [Pre-requisites](#pre-requisites)
   - [Steps to create new HAL based measurement](#steps-to-create-new-hal-based-measurement)
+  - [Directory structure of HAL](#directory-structure-of-hal)
   - [Migrate the existing instrument class to Measurement Plug-In](#migrate-the-existing-instrument-class-to-measurement-plug-in)
 
 ## What is HAL?
@@ -20,46 +21,9 @@ Hardware Abstraction Layer (HAL) enables users to develop software applications 
 
 1. Create a measurement plug-in by following the steps mentioned in the [Developing a measurement plug-in with LabVIEW](https://github.com/ni/measurement-plugin-labview?tab=readme-ov-file#developing-a-labview-measurement) guide.
 
-2. Ensure to follow the recommended directory structure for HAL shown below, to efficiently organize the files related to the HAL implementation.
+2. Ensure to follow the recommended [directory structure for HAL](#directory-structure-of-hal) to efficiently organize the files related to the HAL implementation.
 
-   ``` bash
-
-   <hal_root_directory>
-      ├───Instruments
-      │   ├───<instrument_type>_Base
-      │   │   ├───Accessors
-      │   │   ├───Methods
-      │   │   │   ├───Measurement Methods
-      │   │   │   └───Session Methods
-      │   │   ├───Utility
-      │   │   └───<other related files and folders>
-      │   │
-      │   └───<instrument_type>_Models
-      │       ├───<NI_instrument_type>
-      │       │    └───Methods
-      │       │       └───Measurement Methods
-      │       ├───<instrument_model_1>
-      │       │    ├───Methods
-      │       │    │   ├───Measurement Methods
-      │       │    │   └───Session Methods
-      │       │    ├───subVIs
-      │       │    └───controls
-      │       .
-      │       .
-      │       .
-      │       └───<instrument_model_n>
-      │            └───Methods
-      │                ├───Measurement Methods
-      │                └───Session Methods
-      └───Reusables
-      
-   ```
-
-   **Example:**
-
-   ![Recommended Directory Structure](<./HAL Images/Directory Structure.png>)
-
-3. In `<instrument type>_Base` folder, create a base class for your instrument type that inherits from **LabVIEW Object** and **ISession Factory** interface (located at `<vi.lib>\Plug-In SDKs\Sessions\Instrument\ISession Factory\ISession Factory.lvclass`).
+3. In `<instrument type>_Base` folder, create a base class for your instrument type that inherits the **ISession Factory** interface located at `<vi.lib>\Plug-In SDKs\Sessions\Instrument\ISession Factory\ISession Factory.lvclass` as parent interface.
 
 4. **Override ISession Factory methods**  
    1. Right-click the base class and select `New` -> `VI for Override...`.
@@ -85,7 +49,7 @@ Hardware Abstraction Layer (HAL) enables users to develop software applications 
 
    > **Note**  
    > 1. The dynamic dispatch method for closing any instrument session is not implemented here, as **`Close Sessions.vi`** in the measurement plug-in will close all driver sessions reserved in **`Measurement Logic.vi`**.
-   > 2. You can create additional measurement methods as needed; the above are provided as examples.
+   > 2. Users can create additional measurement methods as needed. The methods listed above are provided for reference.
 
 6. **Edit the private data cluster control of base class**  
    1. Add controls to store the session reservation object, pin name, and channel name as shown below.
@@ -151,6 +115,47 @@ Hardware Abstraction Layer (HAL) enables users to develop software applications 
        - **Close Sessions.vi** and **Unreserve Sessions.vi** – Close and unreserve all instrument sessions created with the session reservation object.
 
        ![Measurement Logic](<HAL Images/Measurement Logic.png>)
+
+## Directory structure of HAL
+
+The recommended directory structure for HAL is shown below:
+
+``` bash
+
+<hal_root_directory>
+   ├───Instruments
+   │   ├───<instrument_type>_Base
+   │   │   ├───Accessors
+   │   │   ├───Methods
+   │   │   │   ├───Measurement Methods
+   │   │   │   └───Session Methods
+   │   │   ├───Utility
+   │   │   └───<other related files and folders>
+   │   │
+   │   └───<instrument_type>_Models
+   │       ├───<NI_instrument_type>
+   │       │    └───Methods
+   │       │       └───Measurement Methods
+   │       ├───<instrument_model_1>
+   │       │    ├───Methods
+   │       │    │   ├───Measurement Methods
+   │       │    │   └───Session Methods
+   │       │    ├───subVIs
+   │       │    └───controls
+   │       .
+   │       .
+   │       .
+   │       └───<instrument_model_n>
+   │            └───Methods
+   │                ├───Measurement Methods
+   │                └───Session Methods
+   └───Reusables
+   
+```
+
+Example:
+
+![Recommended Directory Structure](<./HAL Images/Directory Structure.png>)
 
 ## Migrate the existing instrument class to Measurement Plug-In
 
