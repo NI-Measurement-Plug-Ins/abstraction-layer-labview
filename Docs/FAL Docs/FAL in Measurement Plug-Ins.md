@@ -4,6 +4,7 @@
   - [What is FAL?](#what-is-fal)
   - [Pre-requisites](#pre-requisites)
   - [Steps to create new FAL based measurement](#steps-to-create-new-fal-based-measurement)
+  - [Directory structure of FAL](#directory-structure-of-fal)
   - [Steps to migrate FAL implementations from other frameworks](#steps-to-migrate-fal-implementations-from-other-frameworks)
 
 ## What is FAL?
@@ -12,54 +13,148 @@ The Functional Abstraction Layer (FAL) is a higher-level abstraction layer that 
 
 ## Pre-requisites
 
-- Intermediate working experience in LabVIEW - Object-Oriented Programming (OOP).
-- Understanding of the session management in the measurement plug-ins.
-- Fundamental knowledge of FAL.
+- Intermediate-level expertise in [LabVIEW - Object-Oriented Programming (OOP)](https://www.ni.com/en/support/documentation/supplemental/06/labview-object-oriented-programming--the-decisions-behind-the-de.html).
+- Understanding of the [session management](https://www.ni.com/docs/en-US/bundle/measurementplugins/page/session-management.html) in the measurement plug-ins.
+- Fundamentals of FAL.
 
 ## Steps to create new FAL based measurement
 
-1. Create a measurement plug-in by following the steps mentioned in [Developing a measurement plug-in with LabVIEW](https://github.com/ni/measurement-plugin-labview?tab=readme-ov-file#developing-a-labview-measurement)
-2. Copy the `Abstract_Instrument` base class and its methods into the project. Ensure to inherit the Abstract_Instrument class from `ISession Factory` interface.
-3. Create function interface and implement the dynamic dispatch method for the required functionality.
-    ![Base class and Function Interface](<FAL Images/Base and Function class.png>)
-4. Implement a VI in the function interface that typecasts the `Abstract_Instrument` class object to function interface object. Refer [Utility](https://github.com/NI-Measurement-Plug-Ins/abstraction-layer-labview/tree/main/Source/FAL%20Implementation/FAL/Functions/Measure_Voltage/Utility) for more details.
-5. Create instrument child class `<instrument_type_id>` inherited from `Abstract_Instrument` class and the `function interface`. The instrument child class name should match with the instrument type id in the pin map file and the directory name of the instrument child class. The directory names for different NI instrument types are:
+1. Create a measurement plug-in by following the steps mentioned in the [Developing a measurement plug-in with LabVIEW](https://github.com/ni/measurement-plugin-labview?tab=readme-ov-file#developing-a-labview-measurement) guide.
 
-   Instrument type | Directory name
-   --- | ---
-   NI-DCPower | niDCPower
-   NI-DMM | niDMM
-   NI-Digital Pattern | niDigitalPattern
-   NI-SCOPE | niSCOPE
-   NI-FGEN | niFGEN
-   NI-DAQmx | niDAQmx
-   NI-SWITCH | niRelayDriver
-6. For NI instruments, override the **Initialize Session.vi** session method in the instrument child class.
-7. For custom instruments, override all the session methods present in `Abstract_Instrument` class. The session methods for a Keysight DMM include:
-    - **Initialize Session.vi** - Initializes driver session for the instrument.
-    - ***Initialize MeasurementLink Session.vi*** - Creates a new session using the session initialization parameters. If the session represents a remote session, initialize and close session behavior determines whether creating the local session creates a new session on the server or attaches to an existing session on the server.
+2. Ensure to follow the recommended [directory structure of FAL](#directory-structure-of-fal) to efficiently organize the files related to the FAL implementation.
 
-        ![Initialize MeasurementLink Session](<FAL Images/KeysightDmm Initialize MeasurementLink Session.png>)
+3. **Copy Abstract_Instrument class**  
+   1. Copy the [Abstract_Instrument](https://github.com/NI-Measurement-Plug-Ins/abstraction-layer-labview/tree/main/Source/FAL%20Implementation/FAL/Instruments/Abstract_Instrument) folder and place it inside the `Instruments` directory, preserving its contents.
+   2. Add the copied `Abstract_Instrument.lvclass` to your LabVIEW project that contains the generated measurement plug-in.
+   3. Ensure that the `Abstract_Instrument` class inherits the **ISession Factory** interface located at `<vi.lib>\Plug-In SDKs\Sessions\Instrument\ISession Factory\ISession Factory.lvclass` as parent interface.
 
-    - ***Get Provided Interface and Service Class.vi*** - Returns the provided interface and service class that will be used to query the NI Discovery service for the address and port of the instrument's gRPC server. Do not implement/override this VI if the instrument does not use a gRPC server.
+4. **Copy Reusables**  
+   1. Copy the [Reusables](https://github.com/NI-Measurement-Plug-Ins/abstraction-layer-labview/tree/main/Source/FAL%20Implementation/FAL/Reusables) folder and place it parallel to the `Instruments` folder, preserving its contents.
+   2. Add the copied `Get Pin Information.lvlib` to your LabVIEW project.
+   3. In `Get Instrument Path.vi`, replace the term **Instrument_Models** in the base path with the actual name of the directory that contains your instrument child classes. This VI takes the `instrument_type_id` as input and returns the path to the corresponding child class directory.
 
-        ![Get Provided Interface and Service Class](<FAL Images/KeysightDmm Get Provided Interface and Service Class.png>)
+      ![Get Instrument Path](<./FAL Images/Get Instrument Path.png>)
 
-    - ***Close MeasurmentLink Session.vi*** - Closes the local session. If the session represents a remote session, initialize and close session behavior determines whether closing the local session closes the server session or detaches from the server session.
+   > **Note:**  
+   > The expected folder structure for any FAL-based measurement plug-in should have the **Reusables** folder placed parallel to the **Instruments** folder, which contains the abstract instrument class and child classes.
 
-        ![Close MeasurementLink Session](<FAL Images/KeysightDmm Close MeasurementLink Session.png>)
+5. **Create function interfaces**  
+   1. In your LabVIEW project, create interfaces for each required functionality (for example, `Measure_Voltage.lvclass`). These are called Function Interfaces.
+   2. Save the created Function Interfaces in the `Functions` folder.
 
-8. Create the overriding method for the dynamic dispatch function interface method in the instrument child class. The function methods can vary based on the function type and hence, the users can have their own function methods defined for both their function interface and child classes respectively.
-9. Copy the VIs under [Reusables](https://github.com/NI-Measurement-Plug-Ins/abstraction-layer-labview/tree/main/Source/FAL%20Implementation/FAL/Reusables) into the project. Make sure to update the logic of `Get Instrument Path.vi` to get the path of the child class directory.
-10. Define the inputs and outputs in the measurement plug-ins and update the `Get Type Specialization.vi` to populate the pin information from pin map file.
-11. Update the measurement logic with the below APIs:
-    - ***Initialize Pin.vi*** - a polymorphic VI for reserving measurement plug-ins and driver sessions. Returns an array of `Abstract_Instrument` objects based on pin input.
-    - ***Get \<function-name\> Object.vi***, a polymorphic VI to typecast the `Abstract_Instrument` object to function interface object.
-    - ***Function interface dynamic dispatch API*** for the instrument child class to override the function methods.
-    - ***Close Session*** and ***Unreserve Session*** for closing and unreserving the measurement plug-ins sessions.
+   ![Base class and Function Interface](<FAL Images/Base and Function class.png>)
+
+6. Right-click each created interface and select `New` → `VI from Dynamic Dispatch Template` to create the necessary dynamic dispatch VIs that implement the required functionality for the interface (for example, `Measure_Voltage.vi`).
+
+7. For each function interface, implement [Utility](https://github.com/NI-Measurement-Plug-Ins/abstraction-layer-labview/tree/main/Source/FAL%20Implementation/FAL/Functions/Measure_Voltage/Utility) VIs that typecast the `Abstract_Instrument` object to the corresponding function interface object as shown below:
+
+    ![Get 1 Object](<./FAL Images/Get 1 Object.png>)
+
+8. **Create instrument child classes**  
+    1. Create child classes for instruments of different types and models, inheriting the `Abstract_Instrument.lvclass` as parent class and required function interface(s) as parent interface(s), as shown in the class hierarchy image below. Refer to this [example](https://github.com/NI-Measurement-Plug-Ins/abstraction-layer-labview/tree/main/Source/FAL%20Implementation) for more information.
+    2. **The name of the instrument child class and its directory should match the instrument type ID configured in the pin map file.**
+    3. Below are the directory names for different NI instrument types:
+
+        | Instrument type     | Directory name      |
+        |---------------------|---------------------|
+        | NI-DCPower          | niDCPower           |
+        | NI-DMM              | niDMM               |
+        | NI-Digital Pattern  | niDigitalPattern    |
+        | NI-SCOPE            | niSCOPE             |
+        | NI-FGEN             | niFGEN              |
+        | NI-DAQmx            | niDAQmx             |
+        | NI-SWITCH           | niRelayDriver       |
+
+    ![FAL Class Hierarchy](<./FAL Images/FAL Class Hierarchy.png>)
+
+9. **Override session and function methods in child classes**  
+    1. For NI instruments, override only the **Initialize Session.vi** session method and the dynamic dispatch methods of the function interfaces inherited by the child class.
+    2. For custom instruments, override all session methods and the dynamic dispatch methods of the function interfaces inherited by the child class. Example session methods for a Keysight DMM include:
+        - **Initialize Session.vi** - Initializes driver session for the instrument.
+        - ***Initialize MeasurementLink Session.vi*** - Creates a new session using the session initialization parameters. If the session represents a remote session, initialize and close session behavior determines whether creating the local session creates a new session on the server or attaches to an existing session on the server.
+
+            ![Initialize MeasurementLink Session](<FAL Images/KeysightDmm Initialize MeasurementLink Session.png>)
+
+        - ***Get Provided Interface and Service Class.vi*** - Returns the provided interface and service class that will be used to query the NI Discovery service for the address and port of the instrument's gRPC server. Do not implement/override this VI if the instrument does not use a gRPC server.
+
+            ![Get Provided Interface and Service Class](<FAL Images/KeysightDmm Get Provided Interface and Service Class.png>)
+
+        - ***Close MeasurmentLink Session.vi*** - Closes the local session. If the session represents a remote session, initialize and close session behavior determines whether closing the local session closes the server session or detaches from the server session.
+
+            ![Close MeasurementLink Session](<FAL Images/KeysightDmm Close MeasurementLink Session.png>)
+
+    > **Note**  
+    > The function methods can vary based on the required functionality and hence users can have their own function methods defined for both the function interfaces and child classes.
+
+10. **Define plug-in I/O and update logic**  
+    1. Define the inputs and outputs in the measurement plug-in and update `Get Type Specializations.vi` to populate pin information from the pin map file.
+    2. Use the following APIs in your measurement logic:  
+        - **Initialize Pin.vi** – Polymorphic VI for reserving and initializing instrument sessions. Returns an array of `Abstract_Instrument` objects based on the provided `pin or relay name(s)`.
+        - **Get \<function-name\> Object.vi** – Polymorphic VI for typecasting each `Abstract_Instrument` object to the appropriate function interface object.
+        - **Function interface dynamic dispatch API** – Use the relevant function interface methods (such as `Measure_Voltage.vi`) to perform the required measurement operations.
+        - **Close Session** and **Unreserve Session** – Close and unreserve all instrument sessions created with the session reservation object.
+
     ![Measurement Logic](<FAL Images/Measurement Logic.png>)
+
+## Directory structure of FAL
+
+The recommended directory structure of FAL is shown below:
+
+``` bash
+
+<fal_root_directory>
+    ├───Functions
+    │   ├───<function_1>
+    │   │   ├───Methods
+    │   │   └───Utility
+    │   ├───<function_2>
+    │   │    ├───Methods
+    │   │    └───Utility
+    │   .
+    │   .
+    │   .
+    │   └───<function_n>
+    │        ├───Methods
+    │        └───Utility
+    ├───Instruments
+    │   ├───Abstract_Instrument
+    │   │   ├───Accessors
+    │   │   ├───controls
+    │   │   ├───Methods
+    │   │   └───Utility
+    │   └───Instrument_Models
+    │       ├───<instrument_model_1>
+    │       │   ├───controls
+    │       │   ├───Methods
+    │       │   │   ├───<function_1>
+    │       │   │   ├───<function_2>
+    │       │   │   └───Session Methods
+    │       │   └───subVIs
+    │       ├───<instrument_model_2>
+    │       │   ├───controls
+    │       │   └───Methods
+    │       │       ├───<function_1>
+    │       │       └───Session Methods
+    │       .
+    │       .
+    │       .
+    │       └───<instrument_model_n>
+    │           ├───controls
+    │           └───Methods
+    │               ├───<function_1>
+    │               ├───<function_2>
+    │               └───Session Methods
+    └───Reusables
+    
+```
+
+Example:
+
+![Recommended Directory Structure](<./FAL Images/Directory Structure.png>)
 
 ## Steps to migrate FAL implementations from other frameworks
 
-1. Create a measurement plug-in by following the steps mentioned in [Developing a measurement plug-in with LabVIEW](https://github.com/ni/measurement-plugin-labview?tab=readme-ov-file#developing-a-labview-measurement)
-2. Copy the existing FAL classes to the project and follow from step 2-10 of [Steps to create new FAL based measurement](#steps-to-create-new-fal-based-measurement) for migrating the existing FAL implementations to measurement plug-in.
+1. Create a measurement plug-in by following the steps mentioned in the [Developing a measurement plug-in with LabVIEW](https://github.com/ni/measurement-plugin-labview?tab=readme-ov-file#developing-a-labview-measurement) guide.
+2. Add the existing FAL implementation to the LabVIEW project that contains the created measurement plug-in.
+3. Update the abstract instrument base class of the existing FAL implementation to inherit the **ISession Factory** interface located at `<vi.lib>\Plug-In SDKs\Sessions\Instrument\ISession Factory\ISession Factory.lvclass` as parent interface.
+4. Follow steps 3-10 of [Steps to create new FAL based measurement](#steps-to-create-new-fal-based-measurement) to migrate the existing FAL implementation to measurement plug-in.
