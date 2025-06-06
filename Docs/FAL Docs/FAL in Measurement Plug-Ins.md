@@ -22,7 +22,7 @@ The Functional Abstraction Layer (FAL) is a higher-level abstraction layer that 
     Follow the steps in [Developing a measurement plug-in with LabVIEW](https://github.com/ni/measurement-plugin-labview?tab=readme-ov-file#developing-a-labview-measurement) to create a measurement plug-in.
 
 2. **Follow the recommended directory structure**  
-    Ensure to follow a clean directory structure as shown in the image below. This structure helps to efficiently organize the files related to the FAL implementation.
+    Ensure to follow the recommended directory structure for FAL shown below. This structure helps to efficiently organize the files related to the FAL implementation.
 
     ``` bash
 
@@ -78,9 +78,9 @@ The Functional Abstraction Layer (FAL) is a higher-level abstraction layer that 
 
 3. **Copy the Abstract_Instrument class and Reusables**  
    1. Copy the [`Abstract_Instrument`](https://github.com/NI-Measurement-Plug-Ins/abstraction-layer-labview/tree/main/Source/FAL%20Implementation/FAL/Instruments/Abstract_Instrument) folder into the `Instruments` directory, and the [`Reusables`](https://github.com/NI-Measurement-Plug-Ins/abstraction-layer-labview/tree/main/Source/FAL%20Implementation/FAL/Reusables) folder parallel to the `Instruments` directory. Make sure to preserve all contents of both folders.
-   2. Add `Abstract_Instrument.lvclass` from the `Abstract_Instrument` folder and `Get Pin Information.lvlib` from the `Reusables` folder to your LabVIEW project that contains the created measurement plug-in.
+   2. Add `Abstract_Instrument.lvclass` from the 'Abstract_Instrument' folder and `Get Pin Information.lvlib` from the 'Reusables' folder to your LabVIEW project that contains the created measurement plug-in.
    3. Ensure that the `Abstract_Instrument` class inherits the **ISession Factory** interface located at `<vi.lib>\Plug-In SDKs\Sessions\Instrument\ISession Factory\ISession Factory.lvclass`.
-   4. Open `Get Instrument Path.vi` from the `Reusables` folder and replace the term **Instrument_Models** in the base path with the actual name of the directory that contains your instrument child classes. This VI takes the `instrument_type_id` as input and returns the path to the corresponding child class directory.
+   4. Open `Get Instrument Path.vi` from the 'Reusables' folder and replace the term **Instrument_Models** in the base path with the actual name of the directory that contains your instrument child classes. This VI takes the `instrument_type_id` as input and returns the path to the corresponding child class directory.
 
       ![Get Instrument Path](<./FAL Images/Get Instrument Path.png>)
 
