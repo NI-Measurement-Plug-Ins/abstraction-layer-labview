@@ -64,17 +64,17 @@ To contribute to this project, it is recommended that you follow these steps:
 To build the packages:
 
 1. Open the LabVIEW project of the desired abstraction layer example found under the [HAL
-   Implementation](https://github.com/NI-Measurement-Plug-Ins/abstraction-layer-labview/tree/v1.0.0.2/Source/HAL%20Implementation)
+   Implementation](https://github.com/NI-Measurement-Plug-Ins/abstraction-layer-labview/tree/main/Source/HAL%20Implementation)
    and [FAL
-   Implementation](https://github.com/NI-Measurement-Plug-Ins/abstraction-layer-labview/tree/v1.0.0.2/Source/FAL%20Implementation)
+   Implementation](https://github.com/NI-Measurement-Plug-Ins/abstraction-layer-labview/tree/main/Source/FAL%20Implementation)
    folders.
 2. Build the PPL build specification, followed by the EXE build specification of the example plugin.
 3. Once the build is successfully complete, open the corresponding Package Builder Solution file
    (.pbs) of the HAL/FAL example located in the [Build
-   Specs](https://github.com/NI-Measurement-Plug-Ins/abstraction-layer-labview/tree/v1.0.0.2/Source/Build%20Specs)
+   Specs](https://github.com/NI-Measurement-Plug-Ins/abstraction-layer-labview/tree/main/Source/Build%20Specs)
    folder using NI Package Builder (64-bit).
-4. Navigate to `Build` menu and select `Build Solution`. A `.nipkg` file will be generated in the
-   `Packages` folder within the Build Specs directory.
+4. Navigate to the `Build` menu and select `Build Solution`. A `.nipkg` file will be generated in
+   the `Packages` folder within the Build Specs directory.
 
 The resulting NI packages contain all necessary files for deploying and statically registering the
 example plug-ins.
