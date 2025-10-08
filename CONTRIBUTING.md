@@ -1,12 +1,13 @@
-# Contributing to \<reponame\> 
+# Contributing to Abstraction Layer in Measurement Plug-In for LabVIEW
 
-Contributions to \<reponame\> are welcome from all!
+Contributions to Abstraction Layer in Measurement Plug-In for LabVIEW are welcome from all!
 
-\<reponame\> is managed via [git](https://git-scm.com), with the canonical upstream
-repository hosted on [GitHub](https://github.com/ni/<reponame>/).
+Abstraction Layer in Measurement Plug-In for LabVIEW is managed via [git](https://git-scm.com), with
+the canonical upstream repository hosted on
+[GitHub](https://github.com/NI-Measurement-Plug-Ins/abstraction-layer-labview).
 
-\<reponame\> follows a pull-request model for development.  If you wish to
-contribute, you will need to create a GitHub account, fork this project, push a
+Abstraction Layer in Measurement Plug-In for LabVIEW follows a pull-request model for development.
+If you wish to contribute, you will need to create a GitHub account, fork this project, push a
 branch with your changes to your project, and then submit a pull request.
 
 Please remember to sign off your commits (e.g., by using `git commit -s` if you
@@ -19,15 +20,70 @@ this repository.
 
 See [GitHub's official documentation](https://help.github.com/articles/using-pull-requests/) for more details.
 
-# Getting Started
+## Getting Started
 
-- TODO: include build steps here.
+This repository contains measurement plug-in examples that showcase how to implement the Hardware
+Abstraction Layer (HAL) and Functional Abstraction Layer (FAL) in measurement plug-ins. It also
+includes package builder solution files for building these examples into NI packages.
 
-# Testing
+The source code and package builder solution files (.pbs) are located in the `Source` and `Build
+Specs` directories, respectively.
 
-- TODO: include testing steps here.
+## Prerequisites
 
-# Developer Certificate of Origin (DCO)
+- Install Git
+- Install Software Dependencies mentioned in the [README.md](./README.md)
+
+## Clone or Update the Git Repository
+
+To download the Abstraction Layer in Measurement Plug-In for LabVIEW source, clone its Git
+repository to your local PC.
+
+```cmd
+git clone https://github.com/NI-Measurement-Plug-Ins/abstraction-layer-labview.git
+```
+
+If you already have the Git repository on your local PC, you can update it
+
+```cmd
+git checkout main
+
+git pull
+```
+
+## Steps to Contribute
+
+To contribute to this project, it is recommended that you follow these steps:
+
+1. Make your change.
+2. Send a GitHub Pull Request to the main repository's master branch. GitHub Pull Requests are the
+   expected method of code collaboration on this project.
+
+## Building NI Packages for the HAL and FAL examples
+
+To build the packages:
+
+1. Open the LabVIEW project of the desired abstraction layer example found under the [HAL
+   Implementation](https://github.com/NI-Measurement-Plug-Ins/abstraction-layer-labview/tree/v1.0.0.2/Source/HAL%20Implementation)
+   and [FAL
+   Implementation](https://github.com/NI-Measurement-Plug-Ins/abstraction-layer-labview/tree/v1.0.0.2/Source/FAL%20Implementation)
+   folders.
+2. Build the PPL build specification, followed by the EXE build specification of the example plugin.
+3. Once the build is successfully complete, open the corresponding Package Builder Solution file
+   (.pbs) of the HAL/FAL example located in the [Build
+   Specs](https://github.com/NI-Measurement-Plug-Ins/abstraction-layer-labview/tree/v1.0.0.2/Source/Build%20Specs)
+   folder using NI Package Builder (64-bit).
+4. Navigate to `Build` menu and select `Build Solution`. A `.nipkg` file will be generated in the
+   `Packages` folder within the Build Specs directory.
+
+The resulting NI packages contain all necessary files for deploying and statically registering the
+example plug-ins.
+
+## Testing
+
+Testing should be done manually before submitting the PR.
+
+## Developer Certificate of Origin (DCO)
 
    Developer's Certificate of Origin 1.1
 
@@ -57,5 +113,5 @@ See [GitHub's official documentation](https://help.github.com/articles/using-pul
 
 (taken from [developercertificate.org](https://developercertificate.org/))
 
-See [LICENSE](https://github.com/ni/<reponame>/blob/main/LICENSE)
-for details about how \<reponame\> is licensed.
+See [LICENSE](https://github.com/NI-Measurement-Plug-Ins/abstraction-layer-labview/blob/main/LICENSE)
+for details about how Abstraction Layer in Measurement Plug-In for LabVIEW is licensed.
